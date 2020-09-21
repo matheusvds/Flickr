@@ -8,22 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		C683B4102519679E00B34D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B40F2519679E00B34D8E /* AppDelegate.swift */; };
-		C683B4122519679E00B34D8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B4112519679E00B34D8E /* SceneDelegate.swift */; };
 		C683B4142519679E00B34D8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B4132519679E00B34D8E /* ViewController.swift */; };
-		C683B4172519679E00B34D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C683B4152519679E00B34D8E /* Main.storyboard */; };
 		C683B4192519679F00B34D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C683B4182519679F00B34D8E /* Assets.xcassets */; };
 		C683B41C2519679F00B34D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C683B41A2519679F00B34D8E /* LaunchScreen.storyboard */; };
+		C683B43125196BAE00B34D8E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B42825196BAE00B34D8E /* Domain.framework */; };
+		C683B43625196BAE00B34D8E /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B43525196BAE00B34D8E /* DomainTests.swift */; };
+		C683B43825196BAE00B34D8E /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = C683B42A25196BAE00B34D8E /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C683B43225196BAE00B34D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C683B4042519679E00B34D8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C683B42725196BAE00B34D8E;
+			remoteInfo = Domain;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C683B40C2519679E00B34D8E /* Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C683B40F2519679E00B34D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C683B4112519679E00B34D8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C683B4132519679E00B34D8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C683B4162519679E00B34D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C683B4182519679F00B34D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C683B41B2519679F00B34D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C683B41D2519679F00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C683B42825196BAE00B34D8E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C683B42A25196BAE00B34D8E /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		C683B42B25196BAE00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C683B43025196BAE00B34D8E /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C683B43525196BAE00B34D8E /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
+		C683B43725196BAE00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +49,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C683B42525196BAE00B34D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C683B42D25196BAE00B34D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C683B43125196BAE00B34D8E /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				C683B40E2519679E00B34D8E /* Flickr */,
+				C683B42925196BAE00B34D8E /* Domain */,
+				C683B43425196BAE00B34D8E /* DomainTests */,
 				C683B40D2519679E00B34D8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				C683B40C2519679E00B34D8E /* Flickr.app */,
+				C683B42825196BAE00B34D8E /* Domain.framework */,
+				C683B43025196BAE00B34D8E /* DomainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				C683B40F2519679E00B34D8E /* AppDelegate.swift */,
-				C683B4112519679E00B34D8E /* SceneDelegate.swift */,
 				C683B4132519679E00B34D8E /* ViewController.swift */,
-				C683B4152519679E00B34D8E /* Main.storyboard */,
 				C683B4182519679F00B34D8E /* Assets.xcassets */,
 				C683B41A2519679F00B34D8E /* LaunchScreen.storyboard */,
 				C683B41D2519679F00B34D8E /* Info.plist */,
@@ -67,7 +99,36 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
+		C683B42925196BAE00B34D8E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C683B42A25196BAE00B34D8E /* Domain.h */,
+				C683B42B25196BAE00B34D8E /* Info.plist */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C683B43425196BAE00B34D8E /* DomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				C683B43525196BAE00B34D8E /* DomainTests.swift */,
+				C683B43725196BAE00B34D8E /* Info.plist */,
+			);
+			path = DomainTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C683B42325196BAE00B34D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C683B43825196BAE00B34D8E /* Domain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C683B40B2519679E00B34D8E /* Flickr */ = {
@@ -87,6 +148,42 @@
 			productReference = C683B40C2519679E00B34D8E /* Flickr.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C683B42725196BAE00B34D8E /* Domain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C683B43925196BAE00B34D8E /* Build configuration list for PBXNativeTarget "Domain" */;
+			buildPhases = (
+				C683B42325196BAE00B34D8E /* Headers */,
+				C683B42425196BAE00B34D8E /* Sources */,
+				C683B42525196BAE00B34D8E /* Frameworks */,
+				C683B42625196BAE00B34D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Domain;
+			productName = Domain;
+			productReference = C683B42825196BAE00B34D8E /* Domain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C683B42F25196BAE00B34D8E /* DomainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C683B43C25196BAE00B34D8E /* Build configuration list for PBXNativeTarget "DomainTests" */;
+			buildPhases = (
+				C683B42C25196BAE00B34D8E /* Sources */,
+				C683B42D25196BAE00B34D8E /* Frameworks */,
+				C683B42E25196BAE00B34D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C683B43325196BAE00B34D8E /* PBXTargetDependency */,
+			);
+			name = DomainTests;
+			productName = DomainTests;
+			productReference = C683B43025196BAE00B34D8E /* DomainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +195,12 @@
 				ORGANIZATIONNAME = "Matheus Vasconcelos de Sousa";
 				TargetAttributes = {
 					C683B40B2519679E00B34D8E = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					C683B42725196BAE00B34D8E = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					C683B42F25196BAE00B34D8E = {
 						CreatedOnToolsVersion = 11.7;
 					};
 				};
@@ -116,6 +219,8 @@
 			projectRoot = "";
 			targets = (
 				C683B40B2519679E00B34D8E /* Flickr */,
+				C683B42725196BAE00B34D8E /* Domain */,
+				C683B42F25196BAE00B34D8E /* DomainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +232,20 @@
 			files = (
 				C683B41C2519679F00B34D8E /* LaunchScreen.storyboard in Resources */,
 				C683B4192519679F00B34D8E /* Assets.xcassets in Resources */,
-				C683B4172519679E00B34D8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C683B42625196BAE00B34D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C683B42E25196BAE00B34D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +258,35 @@
 			files = (
 				C683B4142519679E00B34D8E /* ViewController.swift in Sources */,
 				C683B4102519679E00B34D8E /* AppDelegate.swift in Sources */,
-				C683B4122519679E00B34D8E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C683B42425196BAE00B34D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C683B42C25196BAE00B34D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C683B43625196BAE00B34D8E /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		C683B4152519679E00B34D8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C683B4162519679E00B34D8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		C683B43325196BAE00B34D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C683B42725196BAE00B34D8E /* Domain */;
+			targetProxy = C683B43225196BAE00B34D8E /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		C683B41A2519679F00B34D8E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flickr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flickr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +445,100 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C683B43A25196BAE00B34D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Domain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithdev.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C683B43B25196BAE00B34D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Domain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithdev.Domain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C683B43D25196BAE00B34D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DomainTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithdev.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C683B43E25196BAE00B34D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DomainTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mithdev.DomainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -331,6 +559,24 @@
 			buildConfigurations = (
 				C683B4212519679F00B34D8E /* Debug */,
 				C683B4222519679F00B34D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C683B43925196BAE00B34D8E /* Build configuration list for PBXNativeTarget "Domain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C683B43A25196BAE00B34D8E /* Debug */,
+				C683B43B25196BAE00B34D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C683B43C25196BAE00B34D8E /* Build configuration list for PBXNativeTarget "DomainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C683B43D25196BAE00B34D8E /* Debug */,
+				C683B43E25196BAE00B34D8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
