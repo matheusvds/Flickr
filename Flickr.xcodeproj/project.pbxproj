@@ -13,7 +13,10 @@
 		C683B41C2519679F00B34D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C683B41A2519679F00B34D8E /* LaunchScreen.storyboard */; };
 		C683B43125196BAE00B34D8E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B42825196BAE00B34D8E /* Domain.framework */; };
 		C683B43625196BAE00B34D8E /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B43525196BAE00B34D8E /* DomainTests.swift */; };
-		C683B43825196BAE00B34D8E /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = C683B42A25196BAE00B34D8E /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C683B44225197B8C00B34D8E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B44125197B8C00B34D8E /* SearchResult.swift */; };
+		C683B44425197CAB00B34D8E /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B44325197CAB00B34D8E /* Reference.swift */; };
+		C683B44625197D9B00B34D8E /* SearchPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B44525197D9B00B34D8E /* SearchPhotos.swift */; };
+		C683B44925197E8C00B34D8E /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B44825197E8C00B34D8E /* DomainError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +37,14 @@
 		C683B41B2519679F00B34D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C683B41D2519679F00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C683B42825196BAE00B34D8E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C683B42A25196BAE00B34D8E /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		C683B42B25196BAE00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C683B43025196BAE00B34D8E /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C683B43525196BAE00B34D8E /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		C683B43725196BAE00B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C683B44125197B8C00B34D8E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		C683B44325197CAB00B34D8E /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		C683B44525197D9B00B34D8E /* SearchPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotos.swift; sourceTree = "<group>"; };
+		C683B44825197E8C00B34D8E /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,9 @@
 		C683B42925196BAE00B34D8E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C683B42A25196BAE00B34D8E /* Domain.h */,
+				C683B44725197E0900B34D8E /* Error */,
+				C683B4402519782800B34D8E /* UseCases */,
+				C683B43F2519764000B34D8E /* Model */,
 				C683B42B25196BAE00B34D8E /* Info.plist */,
 			);
 			path = Domain;
@@ -117,6 +125,31 @@
 			path = DomainTests;
 			sourceTree = "<group>";
 		};
+		C683B43F2519764000B34D8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C683B44125197B8C00B34D8E /* SearchResult.swift */,
+				C683B44325197CAB00B34D8E /* Reference.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C683B4402519782800B34D8E /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C683B44525197D9B00B34D8E /* SearchPhotos.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C683B44725197E0900B34D8E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				C683B44825197E8C00B34D8E /* DomainError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -124,7 +157,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C683B43825196BAE00B34D8E /* Domain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +231,7 @@
 					};
 					C683B42725196BAE00B34D8E = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 					C683B42F25196BAE00B34D8E = {
 						CreatedOnToolsVersion = 11.7;
@@ -265,6 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C683B44625197D9B00B34D8E /* SearchPhotos.swift in Sources */,
+				C683B44225197B8C00B34D8E /* SearchResult.swift in Sources */,
+				C683B44925197E8C00B34D8E /* DomainError.swift in Sources */,
+				C683B44425197CAB00B34D8E /* Reference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +488,7 @@
 		C683B43A25196BAE00B34D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -470,6 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -479,6 +518,7 @@
 		C683B43B25196BAE00B34D8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -507,6 +547,7 @@
 		C683B43D25196BAE00B34D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DomainTests/Info.plist;
@@ -526,6 +567,7 @@
 		C683B43E25196BAE00B34D8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DomainTests/Info.plist;
