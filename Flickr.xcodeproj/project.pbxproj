@@ -36,6 +36,7 @@
 		C683B492251AC8C600B34D8E /* getSizesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B491251AC8C600B34D8E /* getSizesJSON.swift */; };
 		C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B493251AC95B00B34D8E /* GetSizes.swift */; };
 		C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B495251AC9EC00B34D8E /* SizesResult.swift */; };
+		C683B498251ACD0800B34D8E /* RemoteGetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		C683B491251AC8C600B34D8E /* getSizesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSizesJSON.swift; sourceTree = "<group>"; };
 		C683B493251AC95B00B34D8E /* GetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizes.swift; sourceTree = "<group>"; };
 		C683B495251AC9EC00B34D8E /* SizesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesResult.swift; sourceTree = "<group>"; };
+		C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetSizes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				C683B46D2519824A00B34D8E /* RemoteSearchPhotos.swift */,
+				C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				C683B48B251ABFC700B34D8E /* DataExtensions.swift in Sources */,
 				C683B4732519847300B34D8E /* HttpError.swift in Sources */,
 				C683B4712519835500B34D8E /* HttpGetClient.swift in Sources */,
+				C683B498251ACD0800B34D8E /* RemoteGetSizes.swift in Sources */,
 				C683B484251AB31D00B34D8E /* SearchRequest.swift in Sources */,
 				C683B486251ABD3200B34D8E /* ImageSizesRequest.swift in Sources */,
 				C683B476251AADB200B34D8E /* FlickrAPIRequest.swift in Sources */,

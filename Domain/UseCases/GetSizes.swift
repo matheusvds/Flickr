@@ -6,9 +6,9 @@ public protocol GetSizes {
 }
 
 public struct GetSizesModel {
-    public var photoID: Int
+    public var photoID: String
     
-    public init(photoID: Int) {
+    public init(photoID: String) {
         self.photoID = photoID
     }
 }
