@@ -34,6 +34,20 @@
                ReferencedContainer = "container:Flickr.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C683B4FF251AD7CB00B34D8E"
+               BuildableName = "Infra.framework"
+               BlueprintName = "Infra"
+               ReferencedContainer = "container:Flickr.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -41,7 +55,39 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      enableThreadSanitizer = "YES">
+      enableThreadSanitizer = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C683B44E251980E800B34D8E"
+            BuildableName = "Data.framework"
+            BlueprintName = "Data"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C683B4FF251AD7CB00B34D8E"
+            BuildableName = "Infra.framework"
+            BlueprintName = "Infra"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C683B42725196BAE00B34D8E"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C683B40B2519679E00B34D8E"
+            BuildableName = "Flickr.app"
+            BlueprintName = "Flickr"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -51,6 +97,28 @@
                BlueprintIdentifier = "C683B456251980E800B34D8E"
                BuildableName = "DataTests.xctest"
                BlueprintName = "DataTests"
+               ReferencedContainer = "container:Flickr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C683B507251AD7CB00B34D8E"
+               BuildableName = "InfraTests.xctest"
+               BlueprintName = "InfraTests"
+               ReferencedContainer = "container:Flickr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C683B526251ADA2000B34D8E"
+               BuildableName = "UseCasesIntegrationTests.xctest"
+               BlueprintName = "UseCasesIntegrationTests"
                ReferencedContainer = "container:Flickr.xcodeproj">
             </BuildableReference>
          </TestableReference>
