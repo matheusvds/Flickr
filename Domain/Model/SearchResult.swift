@@ -1,12 +1,12 @@
 import Foundation
 
 public struct SearchResult: Model {
-    let photos: Photos
-    let stat: String
+    public let photos: Photos
+    public let stat: String
     
     public struct Photos: Model {
-        let page: Int
-        let pages: Int
-        let photo: [Reference]
+        public let page: Int
+        public let pages: Int
+        public let photo: [Reference]
     }
 }

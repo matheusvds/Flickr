@@ -34,6 +34,8 @@
 		C683B48D251AC23D00B34D8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B48C251AC23D00B34D8E /* Model.swift */; };
 		C683B490251AC35A00B34D8E /* searchResultJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B48F251AC35A00B34D8E /* searchResultJSON.swift */; };
 		C683B492251AC8C600B34D8E /* getSizesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B491251AC8C600B34D8E /* getSizesJSON.swift */; };
+		C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B493251AC95B00B34D8E /* GetSizes.swift */; };
+		C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B495251AC9EC00B34D8E /* SizesResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		C683B48C251AC23D00B34D8E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C683B48F251AC35A00B34D8E /* searchResultJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultJSON.swift; sourceTree = "<group>"; };
 		C683B491251AC8C600B34D8E /* getSizesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSizesJSON.swift; sourceTree = "<group>"; };
+		C683B493251AC95B00B34D8E /* GetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizes.swift; sourceTree = "<group>"; };
+		C683B495251AC9EC00B34D8E /* SizesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 				C683B44125197B8C00B34D8E /* SearchResult.swift */,
 				C683B44325197CAB00B34D8E /* Reference.swift */,
 				C683B48C251AC23D00B34D8E /* Model.swift */,
+				C683B495251AC9EC00B34D8E /* SizesResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				C683B44525197D9B00B34D8E /* SearchPhotos.swift */,
+				C683B493251AC95B00B34D8E /* GetSizes.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -510,6 +516,8 @@
 				C683B44225197B8C00B34D8E /* SearchResult.swift in Sources */,
 				C683B44925197E8C00B34D8E /* DomainError.swift in Sources */,
 				C683B44425197CAB00B34D8E /* Reference.swift in Sources */,
+				C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */,
+				C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
