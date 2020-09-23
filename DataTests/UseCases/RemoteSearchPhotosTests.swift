@@ -92,8 +92,8 @@ extension RemoteSearchPhotosTests {
                 
             case (.failure(let expectedError), .failure(let receivedError)):
                 XCTAssertEqual(expectedError, receivedError, file: file, line: line)
-            case (.success(let expectedPokemonList), .success(let receivedPokemonList)):
-                XCTAssertEqual(expectedPokemonList, receivedPokemonList, file: file, line: line)
+            case (.success(let expectedResult), .success(let receivedResult)):
+                XCTAssertEqual(expectedResult, receivedResult, file: file, line: line)
                 
             default: XCTFail("expecting \(expectedResult), got \(receivedResult)", file: file, line: line)
             }

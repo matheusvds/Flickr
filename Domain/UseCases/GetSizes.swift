@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol GetSizes {
-    typealias Result = Swift.Result<SearchResult, DomainError>
+    typealias Result = Swift.Result<SizesResult, DomainError>
     func getSizes(getSizesModel: GetSizesModel, completion: @escaping (Result) -> Void)
 }
 

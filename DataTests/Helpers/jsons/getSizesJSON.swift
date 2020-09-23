@@ -140,4 +140,4 @@ let getSizesJSON =
     },
     "stat": "ok"
 }
-""".data(using: .utf8)
+"""

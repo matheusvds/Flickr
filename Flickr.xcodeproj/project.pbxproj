@@ -37,6 +37,7 @@
 		C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B493251AC95B00B34D8E /* GetSizes.swift */; };
 		C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B495251AC9EC00B34D8E /* SizesResult.swift */; };
 		C683B498251ACD0800B34D8E /* RemoteGetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */; };
+		C683B49A251AD12100B34D8E /* RemoteGetSizesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B499251AD12100B34D8E /* RemoteGetSizesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		C683B493251AC95B00B34D8E /* GetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizes.swift; sourceTree = "<group>"; };
 		C683B495251AC9EC00B34D8E /* SizesResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesResult.swift; sourceTree = "<group>"; };
 		C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetSizes.swift; sourceTree = "<group>"; };
+		C683B499251AD12100B34D8E /* RemoteGetSizesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetSizesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +237,6 @@
 				C683B47B251AB17B00B34D8E /* Helpers */,
 				C683B478251AB08200B34D8E /* Http */,
 				C683B477251AAFBB00B34D8E /* UseCases */,
-				C683B45C251980E800B34D8E /* RemoteSearchPhotosTests.swift */,
 				C683B45E251980E800B34D8E /* Info.plist */,
 			);
 			path = DataTests;
@@ -280,6 +281,8 @@
 		C683B477251AAFBB00B34D8E /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				C683B45C251980E800B34D8E /* RemoteSearchPhotosTests.swift */,
+				C683B499251AD12100B34D8E /* RemoteGetSizesTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C683B45D251980E800B34D8E /* RemoteSearchPhotosTests.swift in Sources */,
+				C683B49A251AD12100B34D8E /* RemoteGetSizesTests.swift in Sources */,
 				C683B47D251AB18C00B34D8E /* TestExtensions.swift in Sources */,
 				C683B47F251AB1F600B34D8E /* TestFactories.swift in Sources */,
 				C683B482251AB2AF00B34D8E /* SearchRequestTests.swift in Sources */,

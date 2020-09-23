@@ -14,7 +14,7 @@ public final class RemoteGetSizes: GetSizes {
             guard self != nil else { return }
             switch result {
             case .success(let data):
-                if let model: SearchResult = data?.toModel() {
+                if let model: SizesResult = data?.toModel() {
                     return completion(.success(model))
                 }
                 completion(.failure(.unexpected))

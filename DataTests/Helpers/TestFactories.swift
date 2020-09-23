@@ -21,8 +21,17 @@ func makeSerchPhotosModel() -> SearchPhotosModel {
     return SearchPhotosModel(page: 0, query: "")
 }
 
+func makeGetSizesModel() -> GetSizesModel {
+    return GetSizesModel(photoID: "")
+}
+
 func makeSearchResult() -> SearchResult {
     let result: SearchResult? = searchResultJSON.data(using: .utf8)?.toModel()
+    return result!
+}
+
+func makeSizeResult() -> SizesResult {
+    let result: SizesResult? = getSizesJSON.data(using: .utf8)?.toModel()
     return result!
 }
 
