@@ -4,7 +4,7 @@ import Foundation
 public final class RemoteSearchPhotos: SearchPhotos {
     private let httpClient: HttpClient
     
-    init(httpClient: HttpClient) {
+    public init(httpClient: HttpClient) {
         self.httpClient = httpClient
     }
     
