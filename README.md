@@ -1,4 +1,4 @@
-[![Build Status](https://app.bitrise.io/app/50ed3fca4f008ead/status.svg?token=Iir84igk0uoP-kjtCrurDA)](https://app.bitrise.io/app/50ed3fca4f008ead)
+[![Build Status](https://app.bitrise.io/app/5bbecc687c1ffc9f/status.svg?token=M4hB1gsIdrCoIFujgaGvDA)](https://app.bitrise.io/app/5bbecc687c1ffc9f)
 
 # Flickr
 An iOS application written in Swift using the Clean Architecture design that consumes the Flickr REST API.
