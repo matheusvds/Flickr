@@ -51,6 +51,7 @@
 		C683B52C251ADA2000B34D8E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; };
 		C683B534251ADA3B00B34D8E /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B500251AD7CB00B34D8E /* Infra.framework */; };
 		C683B537251ADA4200B34D8E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B42825196BAE00B34D8E /* Domain.framework */; };
+		C683B539251ADBCA00B34D8E /* GetSizesIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		C683B527251ADA2000B34D8E /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C683B529251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosIntegrationTests.swift; sourceTree = "<group>"; };
 		C683B52B251ADA2000B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizesIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				C683B529251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift */,
+				C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */,
 				C683B52B251ADA2000B34D8E /* Info.plist */,
 			);
 			path = UseCasesIntegrationTests;
@@ -801,6 +804,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C683B539251ADBCA00B34D8E /* GetSizesIntegrationTests.swift in Sources */,
 				C683B52A251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
