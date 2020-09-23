@@ -1,10 +1,10 @@
 import Foundation
 
-public struct SearchResult: Codable {
+public struct SearchResult: Model {
     let photos: Photos
     let stat: String
     
-    public struct Photos: Codable {
+    public struct Photos: Model {
         let page: Int
         let pages: Int
         let photo: [Reference]

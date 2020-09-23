@@ -1,6 +1,6 @@
 import Foundation
 
-struct Reference: Codable {
+struct Reference: Model {
     let id: String
     let title: String
 }

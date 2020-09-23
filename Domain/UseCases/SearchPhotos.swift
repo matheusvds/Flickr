@@ -7,10 +7,10 @@ public protocol SearchPhotos {
 
 public struct SearchPhotosModel {
     public var page: Int
-    public var word: String
+    public var query: String
     
-    public init(page: Int, word: String) {
+    public init(page: Int, query: String) {
         self.page = page
-        self.word = word
+        self.query = query
     }
 }

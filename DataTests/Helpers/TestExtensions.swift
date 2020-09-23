@@ -8,3 +8,9 @@ extension XCTestCase {
         }
     }
 }
+
+extension Encodable {
+    func toData() -> Data? {
+        return try? JSONEncoder().encode(self)
+    }
+}

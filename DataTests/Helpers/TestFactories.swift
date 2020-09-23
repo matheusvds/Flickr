@@ -1,4 +1,5 @@
 import Foundation
+import Domain
 
 func makeDummyURL() -> URL {
     return URL(string: "https://anyurl.com")!
@@ -14,6 +15,15 @@ func makeValidData() -> Data {
 
 func makeEmptyData() -> Data {
     return Data()
+}
+
+func makeSerchPhotosModel() -> SearchPhotosModel {
+    return SearchPhotosModel(page: 0, query: "")
+}
+
+func makeSearchResult() -> SearchResult {
+    let result: SearchResult? = searchResultJSON.data(using: .utf8)?.toModel()
+    return result!
 }
 
 func makeHttpResponse(statusCode code: Int = 200) -> HTTPURLResponse {
