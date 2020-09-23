@@ -15,7 +15,6 @@ class RemoteSearchPhotosTests: XCTestCase {
         httpClientSpy.complete(withError: .badRequest)
         
         XCTAssertNil(receivedResult)
-        
     }
     
     func test_search_should_complete_with_success_when_client_completes_with_valid_data() {
@@ -46,7 +45,7 @@ class RemoteSearchPhotosTests: XCTestCase {
             httpClientSpy.complete(withError: .badRequest)
         })
     }
-
+    
     func test_search_should_complete_with_error_when_client_completes_with_forbidden_error() {
         let (sut, httpClientSpy) = makeSut()
         expect(sut, completeWith: .failure(.unexpected), when: {
@@ -90,12 +89,12 @@ extension RemoteSearchPhotosTests {
         let expect = expectation(description: "wait")
         sut.searchPhotos(searchPhotosModel: makeSerchPhotosModel()) { receivedResult in
             switch (expectedResult, receivedResult) {
-            
+                
             case (.failure(let expectedError), .failure(let receivedError)):
                 XCTAssertEqual(expectedError, receivedError, file: file, line: line)
             case (.success(let expectedPokemonList), .success(let receivedPokemonList)):
                 XCTAssertEqual(expectedPokemonList, receivedPokemonList, file: file, line: line)
-
+                
             default: XCTFail("expecting \(expectedResult), got \(receivedResult)", file: file, line: line)
             }
             expect.fulfill()
