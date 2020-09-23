@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Application.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>CI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,7 +37,12 @@
 		<key>IntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>7</integer>
+		</dict>
+		<key>UI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -58,6 +68,16 @@
 			<true/>
 		</dict>
 		<key>C683B526251ADA2000B34D8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C684F4E1251C004A004E657E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C684F502251C009B004E657E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
