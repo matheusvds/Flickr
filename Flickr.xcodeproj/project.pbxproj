@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,12 +59,21 @@
 		C684F4DC251AF315004E657E /* GetPhotosIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F4DB251AF315004E657E /* GetPhotosIntegrationTests.swift */; };
 		C684F4EB251C004A004E657E /* Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684F4E2251C004A004E657E /* Application.framework */; };
 		C684F4F0251C004A004E657E /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F4EF251C004A004E657E /* ApplicationTests.swift */; };
-		C684F4F2251C004A004E657E /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = C684F4E4251C004A004E657E /* Application.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C684F4F9251C007E004E657E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; };
 		C684F4FA251C007E004E657E /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C684F507251C009B004E657E /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = C684F505251C009B004E657E /* UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C684F50B251C00C4004E657E /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684F503251C009B004E657E /* UI.framework */; };
 		C684F50C251C00C4004E657E /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C684F503251C009B004E657E /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C684F512251C0AD9004E657E /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F511251C0AD9004E657E /* PhotoListViewController.swift */; };
+		C684F515251C0AFC004E657E /* PhotoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F514251C0AFC004E657E /* PhotoListInteractor.swift */; };
+		C684F517251C0B0A004E657E /* PhotoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F516251C0B0A004E657E /* PhotoListPresenter.swift */; };
+		C684F519251C0B14004E657E /* PhotoListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F518251C0B14004E657E /* PhotoListModels.swift */; };
+		C684F51D251C0D0A004E657E /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F51C251C0D0A004E657E /* PhotoListView.swift */; };
+		C684F51F251C0D98004E657E /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F51E251C0D98004E657E /* PhotoListViewModel.swift */; };
+		C684F521251C0DCD004E657E /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F520251C0DCD004E657E /* ViewCode.swift */; };
+		C684F524251C0E32004E657E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C684F523251C0E32004E657E /* SnapKit */; };
+		C684F528251C0EEC004E657E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */; };
+		C684F52A251C0F88004E657E /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F529251C0F88004E657E /* Identifiable.swift */; };
+		C684F52C251C12EB004E657E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F52B251C12EB004E657E /* Application.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,14 +239,22 @@
 		C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetPhotos.swift; sourceTree = "<group>"; };
 		C684F4DB251AF315004E657E /* GetPhotosIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosIntegrationTests.swift; sourceTree = "<group>"; };
 		C684F4E2251C004A004E657E /* Application.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Application.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C684F4E4251C004A004E657E /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		C684F4E5251C004A004E657E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C684F4EA251C004A004E657E /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C684F4EF251C004A004E657E /* ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
 		C684F4F1251C004A004E657E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C684F503251C009B004E657E /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C684F505251C009B004E657E /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		C684F506251C009B004E657E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C684F511251C0AD9004E657E /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		C684F514251C0AFC004E657E /* PhotoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListInteractor.swift; sourceTree = "<group>"; };
+		C684F516251C0B0A004E657E /* PhotoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListPresenter.swift; sourceTree = "<group>"; };
+		C684F518251C0B14004E657E /* PhotoListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListModels.swift; sourceTree = "<group>"; };
+		C684F51C251C0D0A004E657E /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
+		C684F51E251C0D98004E657E /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		C684F520251C0DCD004E657E /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		C684F529251C0F88004E657E /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		C684F52B251C12EB004E657E /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C684F524251C0E32004E657E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,7 +584,8 @@
 		C684F4E3251C004A004E657E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				C684F4E4251C004A004E657E /* Application.h */,
+				C684F52B251C12EB004E657E /* Application.swift */,
+				C684F50F251C0863004E657E /* Scenes */,
 				C684F4E5251C004A004E657E /* Info.plist */,
 			);
 			path = Application;
@@ -584,10 +603,49 @@
 		C684F504251C009B004E657E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C684F505251C009B004E657E /* UI.h */,
+				C684F520251C0DCD004E657E /* ViewCode.swift */,
+				C684F529251C0F88004E657E /* Identifiable.swift */,
+				C684F525251C0E57004E657E /* Scenes */,
 				C684F506251C009B004E657E /* Info.plist */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		C684F50F251C0863004E657E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C684F510251C0A72004E657E /* PhotoList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C684F510251C0A72004E657E /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				C684F511251C0AD9004E657E /* PhotoListViewController.swift */,
+				C684F514251C0AFC004E657E /* PhotoListInteractor.swift */,
+				C684F516251C0B0A004E657E /* PhotoListPresenter.swift */,
+				C684F518251C0B14004E657E /* PhotoListModels.swift */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		C684F525251C0E57004E657E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C684F526251C0E5A004E657E /* PhotoList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C684F526251C0E5A004E657E /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				C684F51C251C0D0A004E657E /* PhotoListView.swift */,
+				C684F51E251C0D98004E657E /* PhotoListViewModel.swift */,
+				C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */,
+			);
+			path = PhotoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,7 +676,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C684F4F2251C004A004E657E /* Application.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +683,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C684F507251C009B004E657E /* UI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +873,9 @@
 			dependencies = (
 			);
 			name = UI;
+			packageProductDependencies = (
+				C684F523251C0E32004E657E /* SnapKit */,
+			);
 			productName = UI;
 			productReference = C684F503251C009B004E657E /* UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -857,12 +916,14 @@
 					};
 					C684F4E1251C004A004E657E = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 					C684F4E9251C004A004E657E = {
 						CreatedOnToolsVersion = 11.7;
 					};
 					C684F502251C009B004E657E = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -875,6 +936,9 @@
 				Base,
 			);
 			mainGroup = C683B4032519679E00B34D8E;
+			packageReferences = (
+				C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = C683B40D2519679E00B34D8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1061,6 +1125,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C684F52C251C12EB004E657E /* Application.swift in Sources */,
+				C684F517251C0B0A004E657E /* PhotoListPresenter.swift in Sources */,
+				C684F512251C0AD9004E657E /* PhotoListViewController.swift in Sources */,
+				C684F519251C0B14004E657E /* PhotoListModels.swift in Sources */,
+				C684F515251C0AFC004E657E /* PhotoListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C684F51D251C0D0A004E657E /* PhotoListView.swift in Sources */,
+				C684F51F251C0D98004E657E /* PhotoListViewModel.swift in Sources */,
+				C684F528251C0EEC004E657E /* PhotoCollectionCell.swift in Sources */,
+				C684F52A251C0F88004E657E /* Identifiable.swift in Sources */,
+				C684F521251C0DCD004E657E /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1266,7 +1340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flickr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1284,7 +1358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flickr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1606,6 +1680,7 @@
 		C684F4F4251C004A004E657E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1626,6 +1701,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1635,6 +1711,7 @@
 		C684F4F5251C004A004E657E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1664,6 +1741,7 @@
 		C684F4F7251C004A004E657E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ApplicationTests/Info.plist;
@@ -1684,6 +1762,7 @@
 		C684F4F8251C004A004E657E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ApplicationTests/Info.plist;
@@ -1704,6 +1783,7 @@
 		C684F509251C009B004E657E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1724,6 +1804,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1733,6 +1814,7 @@
 		C684F50A251C009B004E657E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1862,6 +1944,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C684F523251C0E32004E657E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C683B4042519679E00B34D8E /* Project object */;
 }
