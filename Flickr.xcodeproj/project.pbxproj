@@ -54,6 +54,9 @@
 		C683B539251ADBCA00B34D8E /* GetSizesIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */; };
 		C684F4D0251ADFE4004E657E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; };
 		C684F4D1251ADFE4004E657E /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C684F4D6251AE3D1004E657E /* GetPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F4D5251AE3D1004E657E /* GetPhotos.swift */; };
+		C684F4D8251AE4FE004E657E /* RemoteGetPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */; };
+		C684F4DC251AF315004E657E /* GetPhotosIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F4DB251AF315004E657E /* GetPhotosIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +185,9 @@
 		C683B529251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosIntegrationTests.swift; sourceTree = "<group>"; };
 		C683B52B251ADA2000B34D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSizesIntegrationTests.swift; sourceTree = "<group>"; };
+		C684F4D5251AE3D1004E657E /* GetPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotos.swift; sourceTree = "<group>"; };
+		C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetPhotos.swift; sourceTree = "<group>"; };
+		C684F4DB251AF315004E657E /* GetPhotosIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotosIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,10 +305,10 @@
 		C683B43F2519764000B34D8E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C683B44125197B8C00B34D8E /* SearchResult.swift */,
-				C683B44325197CAB00B34D8E /* Reference.swift */,
 				C683B48C251AC23D00B34D8E /* Model.swift */,
+				C683B44125197B8C00B34D8E /* SearchResult.swift */,
 				C683B495251AC9EC00B34D8E /* SizesResult.swift */,
+				C683B44325197CAB00B34D8E /* Reference.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			children = (
 				C683B44525197D9B00B34D8E /* SearchPhotos.swift */,
 				C683B493251AC95B00B34D8E /* GetSizes.swift */,
+				C684F4D5251AE3D1004E657E /* GetPhotos.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -360,6 +367,7 @@
 			children = (
 				C683B46D2519824A00B34D8E /* RemoteSearchPhotos.swift */,
 				C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */,
+				C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -469,6 +477,7 @@
 			children = (
 				C683B529251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift */,
 				C683B538251ADBCA00B34D8E /* GetSizesIntegrationTests.swift */,
+				C684F4DB251AF315004E657E /* GetPhotosIntegrationTests.swift */,
 				C683B52B251ADA2000B34D8E /* Info.plist */,
 			);
 			path = UseCasesIntegrationTests;
@@ -767,6 +776,7 @@
 				C683B44425197CAB00B34D8E /* Reference.swift in Sources */,
 				C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */,
 				C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */,
+				C684F4D6251AE3D1004E657E /* GetPhotos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C683B46E2519824A00B34D8E /* RemoteSearchPhotos.swift in Sources */,
+				C684F4D8251AE4FE004E657E /* RemoteGetPhotos.swift in Sources */,
 				C683B48B251ABFC700B34D8E /* DataExtensions.swift in Sources */,
 				C683B4732519847300B34D8E /* HttpError.swift in Sources */,
 				C683B4712519835500B34D8E /* HttpGetClient.swift in Sources */,
@@ -827,6 +838,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C684F4DC251AF315004E657E /* GetPhotosIntegrationTests.swift in Sources */,
 				C683B539251ADBCA00B34D8E /* GetSizesIntegrationTests.swift in Sources */,
 				C683B52A251ADA2000B34D8E /* SearchPhotosIntegrationTests.swift in Sources */,
 			);
