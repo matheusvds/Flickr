@@ -79,9 +79,7 @@ public final class PhotoListView: UIView {
     }
     
     private func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-        }
+        collectionView.reloadData()
     }
     
     private func startScreenLoading() {
@@ -109,6 +107,8 @@ extension PhotoListView: PhotoListViewLogic {
     
     public func clearItems() {
         items.removeAll()
+        collectionView.reloadData()
+        startScreenLoading()
     }
     
     public func getSelectedRow() -> Int? {
