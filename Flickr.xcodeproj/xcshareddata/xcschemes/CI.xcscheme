@@ -114,6 +114,20 @@
             BlueprintName = "Flickr"
             ReferencedContainer = "container:Flickr.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C684F4E1251C004A004E657E"
+            BuildableName = "Application.framework"
+            BlueprintName = "Application"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C684F502251C009B004E657E"
+            BuildableName = "UI.framework"
+            BlueprintName = "UI"
+            ReferencedContainer = "container:Flickr.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
