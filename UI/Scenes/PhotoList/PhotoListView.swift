@@ -32,8 +32,10 @@ public final class PhotoListView: UIView {
         collection.delegate = self
         collection.dataSource = self
         collection.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseIdentifier)
+        collection.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer")
         collection.backgroundColor = .white
         collection.showsVerticalScrollIndicator = false
+        self.flowLayout.footerReferenceSize = CGSize(width: collection.bounds.width, height: 50)
         return collection
     }()
     
@@ -66,7 +68,7 @@ public final class PhotoListView: UIView {
     private func startScreenLoading() {
         self.subviews.forEach { $0.removeFromSuperview() }
         addSubview(screenLoading)
-        drawLoading()
+        drawLoading(view: screenLoading)
     }
     
     private func stopLoading() {
@@ -127,6 +129,16 @@ extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowL
         return CGSize(width: cellWidth, height: cellHeight);
     }
     
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
+            footer.addSubview(screenLoading)
+            drawLoading(view: screenLoading)
+            return footer
+        }
+        return UICollectionReusableView()
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectRow()
     }
@@ -158,13 +170,14 @@ extension PhotoListView: ViewCode {
         }
     }
     
-    private func drawLoading() {
-        screenLoading.snp.makeConstraints { (make) in
+    private func drawLoading(view: UIView) {
+        view.snp.makeConstraints { (make) in
             make.centerX.centerY.equalToSuperview()
         }
     }
     
     func additionalConfiguration() {
-        backgroundColor = .white
+        backgroundColor = .systemGray6
+        collectionView.backgroundColor = .systemGray6
     }
 }
