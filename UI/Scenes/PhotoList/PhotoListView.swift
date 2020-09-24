@@ -11,7 +11,8 @@ public protocol PhotoListViewLogic {
 public protocol PhotoListViewDelegate: class {
     func reachedEndOfPage()
     func didSelectRow()
-    func set(imageView: UIImageView?, with url: String)
+    func set(imageView: UIImageView?, with url: String, at row: Int)
+    func cancelLoading(for imageView: UIImageView)
     func isLoading() -> Bool
 }
 
@@ -103,9 +104,12 @@ extension PhotoListView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseIdentifier,
                                                       for: indexPath) as! PhotoCollectionCell
-        
+        cell.imageView.tag = indexPath.row
+        cell.cancelLoad = { [weak self] imgView in
+            self?.delegate?.cancelLoading(for: imgView)
+        }
         let item = items[indexPath.row]
-        delegate?.set(imageView: cell.imageView, with: item.image)
+        delegate?.set(imageView: cell.imageView, with: item.image, at: indexPath.row)
         
         return cell
     }

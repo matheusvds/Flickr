@@ -54,9 +54,13 @@ extension PhotoListViewController: PhotoListDisplayLogic {
 
 // MARK: - PhotoListViewDelegate
 extension PhotoListViewController: PhotoListViewDelegate {
-    func set(imageView: UIImageView?, with url: String) {
+    func cancelLoading(for imageView: UIImageView) {
+        imageLoader.cancel(for: imageView)
+    }
+    
+    func set(imageView: UIImageView?, with url: String, at row: Int) {
         if let imageView = imageView {
-            imageLoader.load(url, for: imageView)
+            imageLoader.load(url, for: imageView, at: row)
         }
     }
 

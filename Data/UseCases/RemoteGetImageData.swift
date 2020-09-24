@@ -2,30 +2,32 @@ import Foundation
 import Domain
 
 public class RemoteGetImageData: GetImageData {
-    private var loadedImages = [URL: Data]()
-    private var runningRequests = [UUID: URLSessionDataTask]()
+    private var loadedImages = NSCache<NSString, NSData>()
+    private var runningRequests = [String: URLSessionDataTask]()
     private let client: HttpClient
     
     public init(client: HttpClient) {
         self.client = client
     }
     
-    public func loadImage(_ url: URL?, _ completion: @escaping (Result<Data, Error>) -> Void) -> UUID? {
+    public func loadImage(_ url: URL?, _ completion: @escaping (Result<Data?, Error>) -> Void) -> UUID? {
         guard let url = url else { return nil }
         
-        if let image = loadedImages[url] {
-            completion(.success(image))
+        if let image = loadedImages.object(forKey: url.absoluteString as NSString) {
+            completion(.success(image as Data))
             return nil
+        } else {
+            completion(.success(nil))
         }
         
         let uuid = UUID()
-        let task = client.send(from: URLRequest(url: url)) { (result) in
-            defer { self.runningRequests.removeValue(forKey: uuid) }
+        let task = client.send(from: URLRequest(url: url)) { [weak self] (result) in
+            defer { self?.runningRequests.removeValue(forKey: uuid.uuidString) }
 
             switch result {
             case .success(let data):
                 if let data = data {
-                    self.loadedImages[url] = data
+                    self?.loadedImages.setObject(data as NSData, forKey: url.absoluteString as NSString)
                     return completion(.success(data))
                 }
                 
@@ -34,7 +36,12 @@ public class RemoteGetImageData: GetImageData {
             }
         }
         
-        runningRequests[uuid] = task!
+        runningRequests[uuid.uuidString] = task!
         return uuid
+    }
+    
+    public func cancelLoad(_ uuid: String) {
+        runningRequests[uuid]?.cancel()
+        runningRequests.removeValue(forKey: uuid)
     }
 }
