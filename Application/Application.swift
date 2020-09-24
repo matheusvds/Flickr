@@ -29,14 +29,21 @@ public class Main: Application {
     
     private func makePhotoListViewController() -> PhotoListViewController {
         let presenter = PhotoListPresenter()
-        let interactor = PhotoListInteractor(fetchPhotos: RemoteSearchPhotos(httpClient: client))
+        let interactor = PhotoListInteractor(getPhotos: makeRemoteGetPhotosUseCase())
         let view = PhotoListView()
-        let viewController = PhotoListViewController(viewLogic: view, interactor: interactor)
+        let imageLoder = ImageLoader(getImageData: RemoteGetImageData(client: client))
+        let viewController = PhotoListViewController(viewLogic: view, interactor: interactor, imageLoader: imageLoder)
         
         view.delegate = viewController
         presenter.displayLogic = viewController
         interactor.presenter = presenter
         
         return viewController
+    }
+    
+    private func makeRemoteGetPhotosUseCase() -> RemoteGetPhotos {
+        let remoteSearchPhotos = RemoteSearchPhotos(httpClient: client)
+        let remoteGetSizes = RemoteGetSizes(httpClient: client)
+        return RemoteGetPhotos(searchPhotos: remoteSearchPhotos, getSizes: remoteGetSizes)
     }
 }

@@ -10,16 +10,19 @@ class PhotoListViewController: UIViewController {
     
     var displayedPhotos = [DisplayedPhoto]()
     var viewLogic: PhotoListViewLogic
+    let imageLoader: UIImageLoader
     
     // MARK: - Control
-    var pagination: Int = 20
+    var pagination: Int = 1
     var loading: Bool = true
     
     // MARK: - Life Cycle
     init(viewLogic: PhotoListViewLogic,
-         interactor: PhotoListBusinessLogic) {
+         interactor: PhotoListBusinessLogic,
+         imageLoader: UIImageLoader) {
         self.viewLogic = viewLogic
         self.interactor = interactor
+        self.imageLoader = imageLoader
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -52,7 +55,9 @@ extension PhotoListViewController: PhotoListDisplayLogic {
 // MARK: - PhotoListViewDelegate
 extension PhotoListViewController: PhotoListViewDelegate {
     func set(imageView: UIImageView?, with url: String) {
-
+        if let imageView = imageView {
+            imageLoader.load(url, for: imageView)
+        }
     }
 
     func isLoading() -> Bool {
@@ -72,7 +77,7 @@ extension PhotoListViewController: PhotoListViewDelegate {
 extension PhotoListViewController {
     
     private func fetchPhotos() {
-
+        interactor.fetchPhotos(request: PhotoList.SearchPhotos.Request(query: "kitten", page: pagination))
     }
     
     private func fetchNewPhotoPage() {
@@ -83,7 +88,7 @@ extension PhotoListViewController {
     }
     
     private func incrementPagination() {
-        self.pagination += 20
+        self.pagination += 1
     }
     
     private func startLoading() {

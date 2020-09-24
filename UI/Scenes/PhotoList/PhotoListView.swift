@@ -78,7 +78,9 @@ public final class PhotoListView: UIView {
 // MARK: - PhotoListViewLogic
 extension PhotoListView: PhotoListViewLogic {
     public func set(viewModel: PhotoListViewModel) {
-        items.append(contentsOf: viewModel.items)
+        if let photosItems = viewModel.items {
+            items.append(contentsOf: photosItems)
+        }
         reloadData()
         stopLoading()
     }
@@ -101,8 +103,10 @@ extension PhotoListView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseIdentifier,
                                                       for: indexPath) as! PhotoCollectionCell
+        
         let item = items[indexPath.row]
         delegate?.set(imageView: cell.imageView, with: item.image)
+        
         return cell
     }
 }

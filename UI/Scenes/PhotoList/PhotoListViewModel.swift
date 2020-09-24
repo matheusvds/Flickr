@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol PhotoListViewModel {
-    var items: [PhotoListItem] { get }
+    var items: [PhotoListItem]? { get }
 }
 
 public protocol PhotoListItem {
@@ -9,7 +9,7 @@ public protocol PhotoListItem {
 }
 
 struct PhotoListVM: PhotoListViewModel {
-    let items: [PhotoListItem]
+    let items: [PhotoListItem]?
     
     init(items: [PhotoListItem]) {
         self.items = items
