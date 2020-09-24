@@ -23,11 +23,13 @@ class ImageLoader: UIImageLoader {
                 DispatchQueue.main.async {
                     let data = UIImage(data: data)
                     if imageView.tag == row {
+                        imageView.stopLoading()
                         imageView.image = data
                     }
                 }
             } else {
                 DispatchQueue.main.async {
+                    imageView.addLoading()
                     imageView.image = UIImage()
                 }
             }
@@ -43,8 +45,29 @@ class ImageLoader: UIImageLoader {
             getImageData.cancelLoad(uuid as String)
             uuidMap.removeObject(forKey: imageView)
             DispatchQueue.main.async {
+                imageView.stopLoading()
                 imageView.image = nil
             }
         }
+    }
+}
+
+
+extension UIImageView {
+    static let loadingID = 1234
+    func addLoading() {
+        let loading = UIActivityIndicatorView(style: .medium)
+        loading.tag = Self.loadingID
+        loading.startAnimating()
+        addSubview(loading)
+        loading.snp.makeConstraints { (make) in
+            make.centerY.centerX.equalToSuperview()
+            make.height.equalTo(loading.snp.width)
+            make.width.equalToSuperview().multipliedBy(0.15)
+        }
+    }
+    
+    func stopLoading() {
+        subviews.forEach { $0.removeFromSuperview() }
     }
 }
