@@ -36,7 +36,7 @@ public class RemoteGetImageData: GetImageData {
             }
         }
         
-        runningRequests[uuid.uuidString] = task!
+        runningRequests[uuid.uuidString] = task
         return uuid
     }
     
