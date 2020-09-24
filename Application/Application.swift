@@ -1,8 +1,7 @@
 import Foundation
-import Data
+import Domain
 import UI
 import UIKit
-
 
 public protocol Application {
     func start()
@@ -12,10 +11,13 @@ public class Main: Application {
     
     public var window: UIWindow?
     
-    private let client: HttpClient
-    
-    public init(client: HttpClient) {
-        self.client = client
+    private let getImageData: GetImageData
+    private let getPhotos: GetPhotos
+
+    public init(getImageData: GetImageData,
+                getPhotos: GetPhotos) {
+        self.getImageData = getImageData
+        self.getPhotos = getPhotos
     }
     
     public func start() {
@@ -29,9 +31,9 @@ public class Main: Application {
     
     private func makePhotoListViewController() -> PhotoListViewController {
         let presenter = PhotoListPresenter()
-        let interactor = PhotoListInteractor(getPhotos: makeRemoteGetPhotosUseCase())
+        let interactor = PhotoListInteractor(getPhotos: getPhotos)
         let view = PhotoListView()
-        let imageLoder = ImageLoader(getImageData: RemoteGetImageData(client: client))
+        let imageLoder = ImageLoader(getImageData: getImageData)
         let viewController = PhotoListViewController(viewLogic: view, interactor: interactor, imageLoader: imageLoder)
         
         view.delegate = viewController
@@ -39,11 +41,5 @@ public class Main: Application {
         interactor.presenter = presenter
         
         return viewController
-    }
-    
-    private func makeRemoteGetPhotosUseCase() -> RemoteGetPhotos {
-        let remoteSearchPhotos = RemoteSearchPhotos(httpClient: client)
-        let remoteGetSizes = RemoteGetSizes(httpClient: client)
-        return RemoteGetPhotos(searchPhotos: remoteSearchPhotos, getSizes: remoteGetSizes)
     }
 }
