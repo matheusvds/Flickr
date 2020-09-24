@@ -28,6 +28,7 @@ class PhotoCollectionView: UICollectionView {
         setupCells()
         setupAppereance()
         buildEmptyView()
+        keyboardDismissMode = .onDrag
     }
     
     func setupCells() {
