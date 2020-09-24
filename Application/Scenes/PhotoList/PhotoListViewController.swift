@@ -2,7 +2,7 @@ import UIKit
 import UI
 
 protocol PhotoListDisplayLogic: class {
-    func displaySearchPhotos(viewModel: PhotoList.GetPhotos.ViewModel)
+    func displayFetchedPhotos(viewModel: PhotoList.GetPhotos.ViewModel)
 }
 
 class PhotoListViewController: UIViewController {
@@ -54,7 +54,7 @@ class PhotoListViewController: UIViewController {
 
 // MARK: - PhotoListDisplayLogic
 extension PhotoListViewController: PhotoListDisplayLogic {
-    func displaySearchPhotos(viewModel: PhotoList.GetPhotos.ViewModel) {
+    func displayFetchedPhotos(viewModel: PhotoList.GetPhotos.ViewModel) {
         viewLogic.set(viewModel: viewModel)
         stopLoading()
     }
