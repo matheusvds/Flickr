@@ -98,6 +98,7 @@
 		C684F562251D410E004E657E /* UIImageLoaderDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F561251D410E004E657E /* UIImageLoaderDummy.swift */; };
 		C684F564251D454F004E657E /* PhotoListViewLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F563251D454F004E657E /* PhotoListViewLogicSpy.swift */; };
 		C684F566251D457E004E657E /* PhotoListBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F565251D457E004E657E /* PhotoListBusinessLogicSpy.swift */; };
+		C684F569251D4711004E657E /* DispatchQueueDedupeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F568251D4711004E657E /* DispatchQueueDedupeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +344,7 @@
 		C684F561251D410E004E657E /* UIImageLoaderDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoaderDummy.swift; sourceTree = "<group>"; };
 		C684F563251D454F004E657E /* PhotoListViewLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewLogicSpy.swift; sourceTree = "<group>"; };
 		C684F565251D457E004E657E /* PhotoListBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		C684F568251D4711004E657E /* DispatchQueueDedupeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueDedupeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				C684F556251D3A7F004E657E /* Doubles */,
+				C684F567251D46FF004E657E /* Helpers */,
 				C684F552251D35B7004E657E /* Scenes */,
 				C684F4EF251C004A004E657E /* ApplicationTests.swift */,
 				C684F4F1251C004A004E657E /* Info.plist */,
@@ -785,6 +788,14 @@
 				C684F561251D410E004E657E /* UIImageLoaderDummy.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		C684F567251D46FF004E657E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C684F568251D4711004E657E /* DispatchQueueDedupeTests.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1295,6 +1306,7 @@
 				C684F558251D3A95004E657E /* PhotoListDisplayLogicSpy.swift in Sources */,
 				C684F55C251D3E61004E657E /* PhotoListViewControllerTests.swift in Sources */,
 				C684F562251D410E004E657E /* UIImageLoaderDummy.swift in Sources */,
+				C684F569251D4711004E657E /* DispatchQueueDedupeTests.swift in Sources */,
 				C684F566251D457E004E657E /* PhotoListBusinessLogicSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
