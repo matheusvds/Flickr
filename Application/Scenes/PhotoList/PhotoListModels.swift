@@ -2,10 +2,10 @@ import Foundation
 import Domain
 import UI
 
-typealias DisplayedPhoto = PhotoList.SearchPhotos.ViewModel.DisplayedPhoto
+typealias DisplayedPhoto = PhotoList.GetPhotos.ViewModel.DisplayedPhoto
 
 enum PhotoList {
-    enum SearchPhotos {
+    enum GetPhotos {
         
         struct Request {
             let query: String

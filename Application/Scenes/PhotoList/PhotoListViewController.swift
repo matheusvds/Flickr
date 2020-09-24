@@ -2,7 +2,7 @@ import UIKit
 import UI
 
 protocol PhotoListDisplayLogic: class {
-    func displaySearchPhotos(viewModel: PhotoList.SearchPhotos.ViewModel)
+    func displaySearchPhotos(viewModel: PhotoList.GetPhotos.ViewModel)
 }
 
 class PhotoListViewController: UIViewController {
@@ -54,7 +54,7 @@ class PhotoListViewController: UIViewController {
 
 // MARK: - PhotoListDisplayLogic
 extension PhotoListViewController: PhotoListDisplayLogic {
-    func displaySearchPhotos(viewModel: PhotoList.SearchPhotos.ViewModel) {
+    func displaySearchPhotos(viewModel: PhotoList.GetPhotos.ViewModel) {
         viewLogic.set(viewModel: viewModel)
         stopLoading()
     }
@@ -103,7 +103,7 @@ extension PhotoListViewController: PhotoListViewDelegate {
 extension PhotoListViewController {
     
     private func fetchPhotos(with query: String) {
-        interactor.fetchPhotos(request: PhotoList.SearchPhotos.Request(query: query, page: pagination))
+        interactor.fetchPhotos(request: PhotoList.GetPhotos.Request(query: query, page: pagination))
     }
     
     private func fetchNewPhotoPage(with query: String) {
