@@ -39,7 +39,7 @@ extension PhotoCollectionCell: ViewCode {
     func additionalConfiguration() {
         layer.cornerRadius = 15
         layer.masksToBounds = true
-        backgroundColor = .systemGray
+        backgroundColor = .systemFill
         imageView.contentMode = .scaleAspectFill
     }
 }
