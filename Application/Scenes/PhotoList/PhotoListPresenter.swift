@@ -12,8 +12,6 @@ class PhotoListPresenter {
 extension PhotoListPresenter: PhotoListPresentationLogic {
     func presentFetchedPhotos(response: PhotoList.GetPhotos.Response) {
         let viewModel = PhotoList.GetPhotos.ViewModel(items: response.refs?.map{ DisplayedPhoto(image: $0) })
-        DispatchQueue.main.async { [weak self] in
-            self?.displayLogic?.displayFetchedPhotos(viewModel: viewModel)
-        }
+            displayLogic?.displayFetchedPhotos(viewModel: viewModel)
     }
 }

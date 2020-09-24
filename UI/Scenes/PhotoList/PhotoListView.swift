@@ -101,8 +101,10 @@ extension PhotoListView: PhotoListViewLogic {
         if let photosItems = viewModel.items {
             items.append(contentsOf: photosItems)
         }
-        reloadData()
-        stopLoading()
+        DispatchQueue.main.async { [weak self] in
+            self?.reloadData()
+            self?.stopLoading()
+        }
     }
     
     public func clearItems() {
