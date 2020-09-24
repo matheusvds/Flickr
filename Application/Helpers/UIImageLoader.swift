@@ -53,7 +53,7 @@ class ImageLoader: UIImageLoader {
 }
 
 
-extension UIImageView {
+fileprivate extension UIImageView {
     static let loadingID = 1234
     func addLoading() {
         let loading = UIActivityIndicatorView(style: .medium)
