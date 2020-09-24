@@ -87,6 +87,8 @@
 		C684F548251C25BF004E657E /* GetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F547251C25BF004E657E /* GetImageData.swift */; };
 		C684F54A251C25F3004E657E /* RemoteGetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F549251C25F3004E657E /* RemoteGetImageData.swift */; };
 		C684F54D251C26DC004E657E /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F54C251C26DC004E657E /* UIImageLoader.swift */; };
+		C684F54F251D109C004E657E /* DispatchQueue+Dedupe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F54E251D109C004E657E /* DispatchQueue+Dedupe.swift */; };
+		C684F551251D179D004E657E /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F550251D179D004E657E /* PhotoCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +323,8 @@
 		C684F547251C25BF004E657E /* GetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageData.swift; sourceTree = "<group>"; };
 		C684F549251C25F3004E657E /* RemoteGetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetImageData.swift; sourceTree = "<group>"; };
 		C684F54C251C26DC004E657E /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
+		C684F54E251D109C004E657E /* DispatchQueue+Dedupe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Dedupe.swift"; sourceTree = "<group>"; };
+		C684F550251D179D004E657E /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -718,6 +722,7 @@
 				C684F51C251C0D0A004E657E /* PhotoListView.swift */,
 				C684F51E251C0D98004E657E /* PhotoListViewModel.swift */,
 				C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */,
+				C684F550251D179D004E657E /* PhotoCollectionView.swift */,
 			);
 			path = PhotoList;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				C684F54C251C26DC004E657E /* UIImageLoader.swift */,
+				C684F54E251D109C004E657E /* DispatchQueue+Dedupe.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1216,6 +1222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C684F54D251C26DC004E657E /* UIImageLoader.swift in Sources */,
+				C684F54F251D109C004E657E /* DispatchQueue+Dedupe.swift in Sources */,
 				C684F52C251C12EB004E657E /* Application.swift in Sources */,
 				C684F517251C0B0A004E657E /* PhotoListPresenter.swift in Sources */,
 				C684F512251C0AD9004E657E /* PhotoListViewController.swift in Sources */,
@@ -1241,6 +1248,7 @@
 				C684F528251C0EEC004E657E /* PhotoCollectionCell.swift in Sources */,
 				C684F52A251C0F88004E657E /* Identifiable.swift in Sources */,
 				C684F521251C0DCD004E657E /* ViewCode.swift in Sources */,
+				C684F551251D179D004E657E /* PhotoCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1455,6 +1463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GRKYXDG5QL;
 				INFOPLIST_FILE = Flickr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1473,6 +1482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GRKYXDG5QL;
 				INFOPLIST_FILE = Flickr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (

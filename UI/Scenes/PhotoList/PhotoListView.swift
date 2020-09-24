@@ -4,21 +4,44 @@ import UIKit
 public protocol PhotoListViewLogic {
     var view: UIView { get }
     func set(viewModel: PhotoListViewModel)
+    func clearItems()
     func getSelectedRow() -> Int?
 }
 
+public typealias PhotoListViewDelegate = PhotoListTableDelegate & ImageLoadingDelegate & SearchDelegate
 
-public protocol PhotoListViewDelegate: class {
+public protocol SearchDelegate: class {
+    func setupInNavigation(controller: UISearchController)
+    func didSearch(with query: String)
+}
+
+public protocol PhotoListTableDelegate: class {
     func reachedEndOfPage()
     func didSelectRow()
+    func isLoading() -> Bool
+}
+
+public protocol ImageLoadingDelegate: class {
     func set(imageView: UIImageView?, with url: String, at row: Int)
     func cancelLoading(for imageView: UIImageView)
-    func isLoading() -> Bool
 }
 
 public final class PhotoListView: UIView {
     
-    public weak var delegate: PhotoListViewDelegate?
+    public weak var delegate: PhotoListViewDelegate? {
+        didSet {
+            delegate?.setupInNavigation(controller: searchController)
+        }
+    }
+    
+    private lazy var searchController: UISearchController = {
+        let controller = UISearchController(searchResultsController: nil)
+        controller.searchBar.autocapitalizationType = .none
+        controller.searchResultsUpdater = self
+        controller.obscuresBackgroundDuringPresentation = false
+        controller.searchBar.placeholder = "we searched for kittens, wanna try?"
+        return controller
+    }()
     
     private lazy var screenLoading: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .medium)
@@ -26,15 +49,11 @@ public final class PhotoListView: UIView {
         return view
     }()
     
-    private lazy var collectionView: UICollectionView = { [weak self] in
-        guard let `self` = self else { return UICollectionView() }
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
+    private lazy var collectionView: PhotoCollectionView = { [weak self] in
+        guard let `self` = self else { return PhotoCollectionView() }
+        let collection = PhotoCollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
         collection.delegate = self
         collection.dataSource = self
-        collection.register(PhotoCollectionCell.self, forCellWithReuseIdentifier: PhotoCollectionCell.reuseIdentifier)
-        collection.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "Footer")
-        collection.backgroundColor = .white
-        collection.showsVerticalScrollIndicator = false
         self.flowLayout.footerReferenceSize = CGSize(width: collection.bounds.width, height: 50)
         return collection
     }()
@@ -88,12 +107,23 @@ extension PhotoListView: PhotoListViewLogic {
         stopLoading()
     }
     
+    public func clearItems() {
+        items.removeAll()
+    }
+    
     public func getSelectedRow() -> Int? {
         return collectionView.indexPathsForSelectedItems?.first?.row
     }
     
     public var view: UIView {
         return self
+    }
+}
+
+extension PhotoListView: UISearchResultsUpdating {
+    public func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        delegate?.didSearch(with: text)
     }
 }
 
@@ -121,7 +151,7 @@ extension PhotoListView: UICollectionViewDataSource {
 extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight = collectionView.bounds.height / 6
+        let cellHeight = collectionView.bounds.height / 2.5
         let collectionPadding = CGFloat(20)
         let collectionWidth = collectionView.bounds.width - collectionPadding
         let cellWidth = collectionWidth / 2
@@ -132,8 +162,12 @@ extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowL
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
-            footer.addSubview(screenLoading)
-            drawLoading(view: screenLoading)
+            if (delegate?.isLoading() ?? false){
+                footer.addSubview(screenLoading)
+                drawLoading(view: screenLoading)
+            } else {
+                footer.subviews.forEach { $0.removeFromSuperview() }
+            }
             return footer
         }
         return UICollectionReusableView()
@@ -178,6 +212,5 @@ extension PhotoListView: ViewCode {
     
     func additionalConfiguration() {
         backgroundColor = .systemGray6
-        collectionView.backgroundColor = .systemGray6
     }
 }

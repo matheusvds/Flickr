@@ -23,7 +23,8 @@ public class Main: Application {
     public func start() {
         let vc = makePhotoListViewController()
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = vc
+        let navigation = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigation
         self.window = window
         
         window.makeKeyAndVisible()

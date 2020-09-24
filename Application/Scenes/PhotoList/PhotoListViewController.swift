@@ -15,6 +15,7 @@ class PhotoListViewController: UIViewController {
     // MARK: - Control
     var pagination: Int = 1
     var loading: Bool = true
+    var query: String = "kitten"
     
     // MARK: - Life Cycle
     init(viewLogic: PhotoListViewLogic,
@@ -36,11 +37,18 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidLoad() {
         start()
+        setupTitle()
+        setupController()
     }
     
     private func start() {
         startLoading()
-        fetchPhotos()
+        fetchPhotos(with: query)
+    }
+    
+    private func setupController() {
+        setupTitle()
+        definesPresentationContext = true
     }
 }
 
@@ -54,6 +62,20 @@ extension PhotoListViewController: PhotoListDisplayLogic {
 
 // MARK: - PhotoListViewDelegate
 extension PhotoListViewController: PhotoListViewDelegate {
+    func didSearch(with query: String) {
+        guard query.count > 0 else { return }
+        self.query = query
+        self.pagination = 1
+        self.viewLogic.clearItems()
+        DispatchQueue.main.asyncDeduped(target: self, after: 0.35) { [weak self] in
+            self?.fetchPhotos(with: query)
+        }
+    }
+    
+    func setupInNavigation(controller: UISearchController) {
+        navigationItem.searchController = controller
+    }
+    
     func cancelLoading(for imageView: UIImageView) {
         imageLoader.cancel(for: imageView)
     }
@@ -69,25 +91,25 @@ extension PhotoListViewController: PhotoListViewDelegate {
     }
 
     func reachedEndOfPage() {
-        fetchNewPhotoPage()
+        fetchNewPhotoPage(with: query)
     }
 
     func didSelectRow() {
-        
+        // It will be implemented in case there's time available
     }
 }
 
 // MARK: - Helpers
 extension PhotoListViewController {
     
-    private func fetchPhotos() {
-        interactor.fetchPhotos(request: PhotoList.SearchPhotos.Request(query: "kitten", page: pagination))
+    private func fetchPhotos(with query: String) {
+        interactor.fetchPhotos(request: PhotoList.SearchPhotos.Request(query: query, page: pagination))
     }
     
-    private func fetchNewPhotoPage() {
+    private func fetchNewPhotoPage(with query: String) {
         self.startLoading()
         self.incrementPagination()
-        self.fetchPhotos()
+        self.fetchPhotos(with: query)
         debugPrint("Ask new page: \(self.pagination)")
     }
     
@@ -101,5 +123,10 @@ extension PhotoListViewController {
     
     private func stopLoading() {
         self.loading = false
+    }
+    
+    private func setupTitle() {
+        title = "Flickr"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

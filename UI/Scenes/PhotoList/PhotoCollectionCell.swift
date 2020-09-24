@@ -40,5 +40,6 @@ extension PhotoCollectionCell: ViewCode {
         layer.cornerRadius = 15
         layer.masksToBounds = true
         backgroundColor = .systemGray
+        imageView.contentMode = .scaleAspectFill
     }
 }
