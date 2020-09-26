@@ -67,7 +67,7 @@ extension PhotoListViewController: PhotoListViewDelegate {
         self.query = query
         self.pagination = 1
         self.viewLogic.clearItems()
-        DispatchQueue.main.asyncDeduped(target: self, after: 0.35) { [weak self] in
+        DispatchQueue.main.asyncDeduped(target: self, after: 0.20) { [weak self] in
             self?.fetchPhotos(with: query)
         }
     }
