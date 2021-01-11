@@ -30,3 +30,7 @@ Choose between the following schemes:
 - **Data**: Build this scheme to create the Data layer framework (or **Cmd + U** to run its unit tests).
 - **Infra**: Build this scheme to create the Infra layer framework (or **Cmd + U** to run its unit tests).
 - **UseCaseIntegrationTests**: **Cmd + U** to run the integration tests for several use cases.
+
+## Dependency Diagram
+
+![Diagram](images/dependency-diagram.png)
