@@ -3,6 +3,7 @@ import UI
 import UIKit
 
 class PhotoListViewLogicSpy: PhotoListViewLogic {
+    
     var view: UIView = UIView()
     var setViewModelCalled = false
     var viewModel: PhotoListViewModel?
@@ -11,6 +12,8 @@ class PhotoListViewLogicSpy: PhotoListViewLogic {
         setViewModelCalled = true
         self.viewModel = viewModel
     }
+    
+    func set(suggestions: [String]) {}
     
     func clearItems() { }
     

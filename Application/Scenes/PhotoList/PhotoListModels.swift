@@ -5,6 +5,7 @@ import UI
 typealias DisplayedPhoto = PhotoList.GetPhotos.ViewModel.DisplayedPhoto
 
 enum PhotoList {
+    
     enum GetPhotos {
         
         struct Request {
@@ -22,6 +23,17 @@ enum PhotoList {
             struct DisplayedPhoto: PhotoListItem {
                 let image: String
             }
+        }
+    }
+    
+    enum GetSuggestions {
+        
+        struct Request { }
+        struct Response {
+            let suggestions: [String]
+        }
+        struct ViewModel {
+            let suggestions: [String]
         }
     }
 }

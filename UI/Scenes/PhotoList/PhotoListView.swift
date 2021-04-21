@@ -4,6 +4,7 @@ import UIKit
 public protocol PhotoListViewLogic {
     var view: UIView { get }
     func set(viewModel: PhotoListViewModel)
+    func set(suggestions: [String])
     func clearItems()
 }
 
@@ -16,6 +17,7 @@ public protocol SearchDelegate: class {
 
 public protocol PhotoListTableDelegate: class {
     func reachedEndOfPage()
+    func getSuggestions()
     func isLoading() -> Bool
 }
 
@@ -34,8 +36,8 @@ public final class PhotoListView: UIView {
     private lazy var searchController: UISearchController = {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchBar.autocapitalizationType = .none
-        controller.searchResultsUpdater = self
         controller.delegate = self
+        controller.searchBar.delegate = self
         controller.obscuresBackgroundDuringPresentation = false
         return controller
     }()
@@ -75,7 +77,7 @@ public final class PhotoListView: UIView {
     }()
     
     private var items = [PhotoListItem]()
-    private var suggestions: [Suggestion] = ["kittens", "garden", "places", "something"]
+    private var suggestions = [Suggestion]()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -114,6 +116,12 @@ public final class PhotoListView: UIView {
 
 // MARK: - PhotoListViewLogic
 extension PhotoListView: PhotoListViewLogic {
+    public func set(suggestions: [String]) {
+        self.suggestions = suggestions.reversed()
+        DispatchQueue.main.async { [weak self] in
+            self?.suggestionTableView.reloadData()
+        }
+    }
     
     public func set(viewModel: PhotoListViewModel) {
         if let photosItems = viewModel.items {
@@ -139,21 +147,27 @@ extension PhotoListView: PhotoListViewLogic {
     }
 }
 
-// MARK: - UISearchResultsUpdating
-extension PhotoListView: UISearchResultsUpdating {
-    
-    public func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        delegate?.didSearch(with: text)
-    }
-}
-
 // MARK: - UISearchControllerDelegate
 extension PhotoListView: UISearchControllerDelegate {
     
     public func presentSearchController(_ searchController: UISearchController) {
         self.collectionView.removeFromSuperview()
         self.buildSuggestionsView()
+    }
+}
+
+// MARK: - UISearchControllerDelegate
+extension PhotoListView: UISearchBarDelegate {
+    
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        rebuildCollectionView()
+    }
+    
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchController.searchBar.text else { return }
+        rebuildCollectionView()
+        delegate?.didSearch(with: text)
+        delegate?.getSuggestions()
     }
 }
 
@@ -167,7 +181,7 @@ extension PhotoListView: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return suggestions.count
+        return suggestions.count > 5 ? 5: suggestions.count
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -3,6 +3,7 @@ import Foundation
 @testable import Application
 
 class PhotoListDisplayLogicSpy: PhotoListDisplayLogic {
+    
     var displayFetchedPhotosCalled = false
     var fetchPhotosViewModel: PhotoList.GetPhotos.ViewModel?
     
@@ -10,4 +11,6 @@ class PhotoListDisplayLogicSpy: PhotoListDisplayLogic {
         displayFetchedPhotosCalled = true
         fetchPhotosViewModel = viewModel
     }
+    
+    func displayFetchedSuggetions(viewModel: PhotoList.GetSuggestions.ViewModel) {}
 }

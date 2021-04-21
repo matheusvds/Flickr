@@ -3,6 +3,7 @@ import UI
 
 protocol PhotoListDisplayLogic: class {
     func displayFetchedPhotos(viewModel: PhotoList.GetPhotos.ViewModel)
+    func displayFetchedSuggetions(viewModel: PhotoList.GetSuggestions.ViewModel)
 }
 
 class PhotoListViewController: UIViewController {
@@ -43,6 +44,7 @@ class PhotoListViewController: UIViewController {
     
     private func start() {
         startLoading()
+        fetchSuggestions()
         fetchPhotos(with: query)
     }
     
@@ -58,18 +60,24 @@ extension PhotoListViewController: PhotoListDisplayLogic {
         viewLogic.set(viewModel: viewModel)
         stopLoading()
     }
+    
+    func displayFetchedSuggetions(viewModel: PhotoList.GetSuggestions.ViewModel) {
+        viewLogic.set(suggestions: viewModel.suggestions)
+    }
 }
 
 // MARK: - PhotoListViewDelegate
 extension PhotoListViewController: PhotoListViewDelegate {
+    func getSuggestions() {
+        fetchSuggestions()
+    }
+    
     func didSearch(with query: String) {
         guard query.count > 0 else { return }
         self.query = query
         self.pagination = 1
         self.viewLogic.clearItems()
-        DispatchQueue.main.asyncDeduped(target: self, after: 0.20) { [weak self] in
-            self?.fetchPhotos(with: query)
-        }
+        self.fetchPhotos(with: query)
     }
     
     func setupInNavigation(controller: UISearchController) {
@@ -93,6 +101,10 @@ extension PhotoListViewController: PhotoListViewDelegate {
 
 // MARK: - Helpers
 extension PhotoListViewController {
+    
+    private func fetchSuggestions() {
+        interactor.fetchSuggestions(request: PhotoList.GetSuggestions.Request())
+    }
     
     private func fetchPhotos(with query: String) {
         interactor.fetchPhotos(request: PhotoList.GetPhotos.Request(query: query, page: pagination))

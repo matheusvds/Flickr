@@ -7,10 +7,13 @@ import Data
 class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var app: Application = { [weak self] in
         let client = URLSessionAdapter()
+        let userSettings = UserDefaultsAdapter()
         let searchPhotos = RemoteSearchPhotos(httpClient: client)
         let getSizes = RemoteGetSizes(httpClient: client)
         let getPhotos = RemoteGetPhotos(searchPhotos: searchPhotos, getSizes: getSizes)
-        let photoListFactory = PhotoListFactory(getPhotos: getPhotos)
+        let getSuggestion = LocalGetSuggestions(userSettings: userSettings)
+        let setSuggestion = LocalSetSuggestions(userSettings: userSettings)
+        let photoListFactory = PhotoListFactory(getPhotos: getPhotos, getSuggestions: getSuggestion, setSuggestions: setSuggestion)
         let main = Main(photoListScene: photoListFactory)
         return main
     }()

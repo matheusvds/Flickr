@@ -9,6 +9,8 @@ final class UserSettingsSpy: UserSettings {
         return data
     }
     
+    func set(value: [String], for setting: String) {}
+    
     func completeWithNilData() {
         self.data = nil
     }

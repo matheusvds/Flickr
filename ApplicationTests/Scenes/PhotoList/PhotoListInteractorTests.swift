@@ -1,4 +1,5 @@
 import XCTest
+import Domain
 @testable import Application
 
 class PhotoListInteractorTests: XCTestCase {
@@ -39,8 +40,18 @@ extension PhotoListInteractorTests {
     func makeSut() -> (PhotoListInteractor, GetPhotosSpy, PhotoListPresentationLogicSpy) {
         let getPhotosSpy = GetPhotosSpy()
         let presenterSpy = PhotoListPresentationLogicSpy()
-        let sut = PhotoListInteractor(getPhotos: getPhotosSpy)
+        let getSuggestionSpy = GetSuggestionsSpy()
+        let setSuggestionSpy = SetSuggestionsSpy()
+        let sut = PhotoListInteractor(getPhotos: getPhotosSpy, getSuggestions: getSuggestionSpy, setSuggestions: setSuggestionSpy)
         sut.presenter = presenterSpy
         return (sut, getPhotosSpy, presenterSpy)
     }
+}
+
+final class GetSuggestionsSpy: GetSuggestions {
+    func getSuggestions() -> [String] { return [] }
+}
+
+final class SetSuggestionsSpy: SetSuggestions {
+    func set(suggestions: [String]) {}
 }
