@@ -102,7 +102,6 @@ extension PhotoListViewController {
         self.startLoading()
         self.incrementPagination()
         self.fetchPhotos(with: query)
-        debugPrint("Ask new page: \(self.pagination)")
     }
     
     private func incrementPagination() {

@@ -57,7 +57,7 @@ public final class PhotoListView: UIView {
         return collection
     }()
     
-    lazy var flowLayout: UICollectionViewFlowLayout = {
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         flowLayout.minimumInteritemSpacing = 10
@@ -66,7 +66,6 @@ public final class PhotoListView: UIView {
     }()
     
     private var items = [PhotoListItem]()
-    private var searchItems = [PhotoListItem]()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -97,6 +96,7 @@ public final class PhotoListView: UIView {
 
 // MARK: - PhotoListViewLogic
 extension PhotoListView: PhotoListViewLogic {
+    
     public func set(viewModel: PhotoListViewModel) {
         if let photosItems = viewModel.items {
             items.append(contentsOf: photosItems)
@@ -121,6 +121,7 @@ extension PhotoListView: PhotoListViewLogic {
 }
 
 extension PhotoListView: UISearchResultsUpdating {
+    
     public func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         delegate?.didSearch(with: text)
@@ -129,6 +130,7 @@ extension PhotoListView: UISearchResultsUpdating {
 
 // MARK: - UICollectionViewDataSource
 extension PhotoListView: UICollectionViewDataSource {
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -185,6 +187,7 @@ extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowL
 
 // MARK: - UI Implementation
 extension PhotoListView: ViewCode {
+    
     func setupHierarchy() {
         addSubview(collectionView)
     }
