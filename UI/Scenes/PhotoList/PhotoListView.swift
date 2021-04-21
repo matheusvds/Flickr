@@ -179,7 +179,7 @@ extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowL
         let offset = scrollView.contentOffset.y + scrollView.frame.size.height*0.6
         let difference = scrollView.contentSize.height - scrollView.frame.size.height
         
-        if let isLoading =  delegate?.isLoading(), offset >= difference && !isLoading {
+        if let isLoading =  delegate?.isLoading(), offset >= difference && difference > 0 && !isLoading {
             delegate?.reachedEndOfPage()
         }
     }
