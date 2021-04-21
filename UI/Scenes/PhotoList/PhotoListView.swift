@@ -111,7 +111,8 @@ extension PhotoListView: PhotoListViewLogic {
         items.removeAll()
         collectionView.reloadData()
         startScreenLoading()
-        collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        if items.isEmpty { return }
+        collectionView.scrollToItem(at: (IndexPath(row: 0, section: 0)), at: .top, animated: false)
     }
     
     public var view: UIView {
