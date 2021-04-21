@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 class PhotoCollectionView: UICollectionView {
+    
     fileprivate lazy var emptyView: UILabel = {
         let emptyView = UILabel()
         emptyView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,12 +53,12 @@ class PhotoCollectionView: UICollectionView {
         emptyView.isHidden = true
     }
     
-    private func buildEmptyView() {
+    private func buildEmptyView() {        
         addSubview(emptyView)
-        emptyView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().multipliedBy(0.7)
-            make.centerX.equalToSuperview()
-
-        }
+        
+        NSLayoutConstraint.activate([
+            emptyView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emptyView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
     }
 }

@@ -1,13 +1,17 @@
 import Foundation
 import UIKit
-import SnapKit
 
 
 class PhotoCollectionCell: UICollectionViewCell, Identifiable {
     
     var cancelLoad: ((UIImageView) -> Void)?
 
-    var imageView: UIImageView = UIImageView(frame: .zero)
+    var imageView: UIImageView = {
+       let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,15 +35,17 @@ extension PhotoCollectionCell: ViewCode {
     }
     
     func buildConstraints() {
-        imageView.snp.makeConstraints { (make) in
-            make.right.top.left.bottom.equalToSuperview()
-        }
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: self.topAnchor),
+            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
     
     func additionalConfiguration() {
         layer.cornerRadius = 15
         layer.masksToBounds = true
         backgroundColor = .systemFill
-        imageView.contentMode = .scaleAspectFill
     }
 }

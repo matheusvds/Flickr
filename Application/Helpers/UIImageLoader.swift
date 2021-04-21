@@ -57,14 +57,18 @@ fileprivate extension UIImageView {
     static let loadingID = 1234
     func addLoading() {
         let loading = UIActivityIndicatorView(style: .medium)
+        loading.translatesAutoresizingMaskIntoConstraints = false
         loading.tag = Self.loadingID
         loading.startAnimating()
         addSubview(loading)
-        loading.snp.makeConstraints { (make) in
-            make.centerY.centerX.equalToSuperview()
-            make.height.equalTo(loading.snp.width)
-            make.width.equalToSuperview().multipliedBy(0.15)
-        }
+        
+        NSLayoutConstraint.activate([
+            loading.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            loading.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            loading.heightAnchor.constraint(equalTo: self.widthAnchor),
+            loading.widthAnchor.constraint(equalToConstant: 20),
+
+        ])
     }
     
     func stopLoading() {

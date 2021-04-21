@@ -70,7 +70,6 @@
 		C684F51D251C0D0A004E657E /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F51C251C0D0A004E657E /* PhotoListView.swift */; };
 		C684F51F251C0D98004E657E /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F51E251C0D98004E657E /* PhotoListViewModel.swift */; };
 		C684F521251C0DCD004E657E /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F520251C0DCD004E657E /* ViewCode.swift */; };
-		C684F524251C0E32004E657E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C684F523251C0E32004E657E /* SnapKit */; };
 		C684F528251C0EEC004E657E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */; };
 		C684F52A251C0F88004E657E /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F529251C0F88004E657E /* Identifiable.swift */; };
 		C684F52C251C12EB004E657E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F52B251C12EB004E657E /* Application.swift */; };
@@ -430,7 +429,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C684F524251C0E32004E657E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,7 +1028,6 @@
 			);
 			name = UI;
 			packageProductDependencies = (
-				C684F523251C0E32004E657E /* SnapKit */,
 			);
 			productName = UI;
 			productReference = C684F503251C009B004E657E /* UI.framework */;
@@ -1093,7 +1090,6 @@
 			);
 			mainGroup = C683B4032519679E00B34D8E;
 			packageReferences = (
-				C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = C683B40D2519679E00B34D8E /* Products */;
 			projectDirPath = "";
@@ -2142,25 +2138,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C684F523251C0E32004E657E /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C684F522251C0E32004E657E /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C683B4042519679E00B34D8E /* Project object */;
 }

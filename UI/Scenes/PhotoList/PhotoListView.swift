@@ -46,6 +46,7 @@ public final class PhotoListView: UIView {
     private lazy var screenLoading: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .medium)
         view.startAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -55,6 +56,7 @@ public final class PhotoListView: UIView {
         collection.delegate = self
         collection.dataSource = self
         self.flowLayout.footerReferenceSize = CGSize(width: collection.bounds.width, height: 50)
+        collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
     
@@ -201,16 +203,21 @@ extension PhotoListView: ViewCode {
     }
     
     func buildConstraints() {
-        collectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide.snp.topMargin).offset(10)
-            make.left.right.bottom.equalToSuperview().inset(10)
-        }
+        let padding: CGFloat = 10
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding)
+        ])
     }
     
     private func drawLoading(view: UIView) {
-        view.snp.makeConstraints { (make) in
-            make.centerX.centerY.equalToSuperview()
-        }
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
     }
     
     func additionalConfiguration() {
