@@ -19,6 +19,6 @@ class GetSizesIntegrationTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 2.0)
+        wait(for: [exp], timeout: 10.0)
     }
 }

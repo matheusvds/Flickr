@@ -10,7 +10,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let searchPhotos = RemoteSearchPhotos(httpClient: client)
         let getSizes = RemoteGetSizes(httpClient: client)
         let getPhotos = RemoteGetPhotos(searchPhotos: searchPhotos, getSizes: getSizes)
-        let getImageData = RemoteGetImageData(client: client)
         let photoListFactory = PhotoListFactory(getPhotos: getPhotos)
         let main = Main(photoListScene: photoListFactory)
         return main

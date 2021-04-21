@@ -11,7 +11,7 @@ target 'Application' do
   pod 'SDWebImage', '~> 5.0'
 
   target 'ApplicationTests' do
-    inherit! :search_paths
+    inherit! :none
   end
 end
 

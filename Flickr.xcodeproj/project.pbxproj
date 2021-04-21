@@ -83,7 +83,6 @@
 		C684F53D251C184A004E657E /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684F503251C009B004E657E /* UI.framework */; };
 		C684F53E251C184A004E657E /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C684F503251C009B004E657E /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C684F548251C25BF004E657E /* GetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F547251C25BF004E657E /* GetImageData.swift */; };
-		C684F54A251C25F3004E657E /* RemoteGetImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F549251C25F3004E657E /* RemoteGetImageData.swift */; };
 		C684F54D251C26DC004E657E /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F54C251C26DC004E657E /* UIImageLoader.swift */; };
 		C684F54F251D109C004E657E /* DispatchQueue+Dedupe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F54E251D109C004E657E /* DispatchQueue+Dedupe.swift */; };
 		C684F551251D179D004E657E /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F550251D179D004E657E /* PhotoCollectionView.swift */; };
@@ -342,7 +341,6 @@
 		C684F529251C0F88004E657E /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C684F52B251C12EB004E657E /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		C684F547251C25BF004E657E /* GetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageData.swift; sourceTree = "<group>"; };
-		C684F549251C25F3004E657E /* RemoteGetImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetImageData.swift; sourceTree = "<group>"; };
 		C684F54C251C26DC004E657E /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
 		C684F54E251D109C004E657E /* DispatchQueue+Dedupe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Dedupe.swift"; sourceTree = "<group>"; };
 		C684F550251D179D004E657E /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
@@ -596,7 +594,6 @@
 				C683B46D2519824A00B34D8E /* RemoteSearchPhotos.swift */,
 				C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */,
 				C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */,
-				C684F549251C25F3004E657E /* RemoteGetImageData.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -613,8 +610,8 @@
 		C683B474251AAD9800B34D8E /* FlickrAPI */ = {
 			isa = PBXGroup;
 			children = (
-				C683B487251ABDA600B34D8E /* FlickrResource.swift */,
 				C683B475251AADB200B34D8E /* FlickrAPIRequest.swift */,
+				C683B487251ABDA600B34D8E /* FlickrResource.swift */,
 				C683B483251AB31D00B34D8E /* SearchRequest.swift */,
 				C683B485251ABD3200B34D8E /* ImageSizesRequest.swift */,
 			);
@@ -1042,6 +1039,7 @@
 				C684F4E6251C004A004E657E /* Sources */,
 				C684F4E7251C004A004E657E /* Frameworks */,
 				C684F4E8251C004A004E657E /* Resources */,
+				A424FC8603EC742DBF27C353 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1238,6 +1236,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flickr/Pods-Flickr-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A424FC8603EC742DBF27C353 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApplicationTests/Pods-ApplicationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApplicationTests/Pods-ApplicationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApplicationTests/Pods-ApplicationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D56FF1772E783BF23BB762ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1343,7 +1358,6 @@
 				C683B4712519835500B34D8E /* HttpGetClient.swift in Sources */,
 				C683B498251ACD0800B34D8E /* RemoteGetSizes.swift in Sources */,
 				C683B484251AB31D00B34D8E /* SearchRequest.swift in Sources */,
-				C684F54A251C25F3004E657E /* RemoteGetImageData.swift in Sources */,
 				C683B486251ABD3200B34D8E /* ImageSizesRequest.swift in Sources */,
 				C683B476251AADB200B34D8E /* FlickrAPIRequest.swift in Sources */,
 				C683B488251ABDA600B34D8E /* FlickrResource.swift in Sources */,
