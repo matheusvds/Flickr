@@ -13,4 +13,8 @@ public final class UserDefaultsAdapter: UserSettings {
         let settings = userDefaults.stringArray(forKey: setting)
         return try? JSONEncoder().encode(settings)
     }
+    
+    public func set(value: [String], for setting: String) {
+        userDefaults.set(value, forKey: setting)
+    }
 }

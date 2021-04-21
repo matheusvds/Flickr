@@ -105,6 +105,8 @@
 		C6AC64C12630BEB600B81444 /* UserSettingsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC64C02630BEB600B81444 /* UserSettingsSpy.swift */; };
 		C6AC64CF2630C14200B81444 /* UserDefaultsAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC64CE2630C14200B81444 /* UserDefaultsAdapterTests.swift */; };
 		C6AC64D72630C15600B81444 /* UserDefaultsSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC64D62630C15600B81444 /* UserDefaultsSpy.swift */; };
+		C6AC64E52630C90000B81444 /* SetSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC64E42630C90000B81444 /* SetSuggestions.swift */; };
+		C6AC64F32630CC5900B81444 /* LocalSetSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC64F22630CC5900B81444 /* LocalSetSuggestions.swift */; };
 		E18859733E40F50823A1E960 /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A7916B2342E79623DB4B8E /* Pods_Application.framework */; };
 		E46C8C65CCA4ADA13B437A06 /* Pods_ApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B3EE60F0C42E872B65CB69 /* Pods_ApplicationTests.framework */; };
 /* End PBXBuildFile section */
@@ -369,6 +371,8 @@
 		C6AC64C02630BEB600B81444 /* UserSettingsSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsSpy.swift; sourceTree = "<group>"; };
 		C6AC64CE2630C14200B81444 /* UserDefaultsAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAdapterTests.swift; sourceTree = "<group>"; };
 		C6AC64D62630C15600B81444 /* UserDefaultsSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSpy.swift; sourceTree = "<group>"; };
+		C6AC64E42630C90000B81444 /* SetSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSuggestions.swift; sourceTree = "<group>"; };
+		C6AC64F22630CC5900B81444 /* LocalSetSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSetSuggestions.swift; sourceTree = "<group>"; };
 		E5DF0CC48F9FB1276908DC4F /* Pods-Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.debug.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -556,6 +560,7 @@
 				C683B493251AC95B00B34D8E /* GetSizes.swift */,
 				C684F4D5251AE3D1004E657E /* GetPhotos.swift */,
 				C6AC648A2630B81B00B81444 /* GetSuggestions.swift */,
+				C6AC64E42630C90000B81444 /* SetSuggestions.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 				C683B497251ACD0800B34D8E /* RemoteGetSizes.swift */,
 				C684F4D7251AE4FE004E657E /* RemoteGetPhotos.swift */,
 				C6AC64922630B9A800B81444 /* LocalGetSuggestions.swift */,
+				C6AC64F22630CC5900B81444 /* LocalSetSuggestions.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1378,6 +1384,7 @@
 				C683B44225197B8C00B34D8E /* SearchResult.swift in Sources */,
 				C683B44925197E8C00B34D8E /* DomainError.swift in Sources */,
 				C683B44425197CAB00B34D8E /* Reference.swift in Sources */,
+				C6AC64E52630C90000B81444 /* SetSuggestions.swift in Sources */,
 				C683B496251AC9EC00B34D8E /* SizesResult.swift in Sources */,
 				C683B494251AC95B00B34D8E /* GetSizes.swift in Sources */,
 				C684F4D6251AE3D1004E657E /* GetPhotos.swift in Sources */,
@@ -1397,6 +1404,7 @@
 				C683B4712519835500B34D8E /* HttpGetClient.swift in Sources */,
 				C683B498251ACD0800B34D8E /* RemoteGetSizes.swift in Sources */,
 				C683B484251AB31D00B34D8E /* SearchRequest.swift in Sources */,
+				C6AC64F32630CC5900B81444 /* LocalSetSuggestions.swift in Sources */,
 				C683B486251ABD3200B34D8E /* ImageSizesRequest.swift in Sources */,
 				C683B476251AADB200B34D8E /* FlickrAPIRequest.swift in Sources */,
 				C683B488251ABDA600B34D8E /* FlickrResource.swift in Sources */,
