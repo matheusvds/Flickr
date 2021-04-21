@@ -35,6 +35,10 @@ func makeSizeResult() -> SizesResult {
     return result!
 }
 
+func makeGetSuggestions() -> [String] {
+    return ["kittens", "places"]
+}
+
 func makeHttpResponse(statusCode code: Int = 200) -> HTTPURLResponse {
     return HTTPURLResponse(url: makeDummyURL(), statusCode: code, httpVersion: nil, headerFields: nil)!
 }
