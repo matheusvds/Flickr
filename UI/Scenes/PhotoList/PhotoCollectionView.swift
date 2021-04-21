@@ -28,7 +28,6 @@ class PhotoCollectionView: UICollectionView {
     private func setup() {
         setupCells()
         setupAppereance()
-        buildEmptyView()
         keyboardDismissMode = .onDrag
     }
     
@@ -53,7 +52,7 @@ class PhotoCollectionView: UICollectionView {
         emptyView.isHidden = true
     }
     
-    private func buildEmptyView() {        
+    func buildEmptyView() {
         addSubview(emptyView)
         
         NSLayoutConstraint.activate([

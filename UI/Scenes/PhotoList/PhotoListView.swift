@@ -82,15 +82,16 @@ public final class PhotoListView: UIView {
     }
     
     private func startScreenLoading() {
-        self.subviews.forEach { $0.removeFromSuperview() }
         addSubview(screenLoading)
         drawLoading(view: screenLoading, at: self)
     }
     
     private func stopLoading() {
-        self.subviews.forEach { $0.removeFromSuperview() }
-        setupHierarchy()
-        buildConstraints()
+        self.screenLoading.removeFromSuperview()
+    }
+    
+    private func setEmptyStateView() {
+        collectionView.buildEmptyView()
     }
 }
 
@@ -105,6 +106,7 @@ extension PhotoListView: PhotoListViewLogic {
             self?.reloadData()
             self?.stopLoading()
         }
+        setEmptyStateView()
     }
     
     public func clearItems() {
