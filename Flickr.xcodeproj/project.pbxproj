@@ -72,7 +72,6 @@
 		C684F521251C0DCD004E657E /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F520251C0DCD004E657E /* ViewCode.swift */; };
 		C684F528251C0EEC004E657E /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F527251C0EEC004E657E /* PhotoCollectionCell.swift */; };
 		C684F52A251C0F88004E657E /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F529251C0F88004E657E /* Identifiable.swift */; };
-		C684F52C251C12EB004E657E /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F52B251C12EB004E657E /* Application.swift */; };
 		C684F52D251C184A004E657E /* Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C684F4E2251C004A004E657E /* Application.framework */; };
 		C684F52E251C184A004E657E /* Application.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C684F4E2251C004A004E657E /* Application.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C684F531251C184A004E657E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683B44F251980E800B34D8E /* Data.framework */; };
@@ -98,6 +97,8 @@
 		C684F564251D454F004E657E /* PhotoListViewLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F563251D454F004E657E /* PhotoListViewLogicSpy.swift */; };
 		C684F566251D457E004E657E /* PhotoListBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F565251D457E004E657E /* PhotoListBusinessLogicSpy.swift */; };
 		C684F569251D4711004E657E /* DispatchQueueDedupeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F568251D4711004E657E /* DispatchQueueDedupeTests.swift */; };
+		C6AC644E2630636300B81444 /* PhotoListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AC644D2630636300B81444 /* PhotoListFactory.swift */; };
+		C6AC6455263066BD00B81444 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = C684F52B251C12EB004E657E /* Application.swift */; };
 		E18859733E40F50823A1E960 /* Pods_Application.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A7916B2342E79623DB4B8E /* Pods_Application.framework */; };
 		E46C8C65CCA4ADA13B437A06 /* Pods_ApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B3EE60F0C42E872B65CB69 /* Pods_ApplicationTests.framework */; };
 /* End PBXBuildFile section */
@@ -355,6 +356,7 @@
 		C684F563251D454F004E657E /* PhotoListViewLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewLogicSpy.swift; sourceTree = "<group>"; };
 		C684F565251D457E004E657E /* PhotoListBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListBusinessLogicSpy.swift; sourceTree = "<group>"; };
 		C684F568251D4711004E657E /* DispatchQueueDedupeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueDedupeTests.swift; sourceTree = "<group>"; };
+		C6AC644D2630636300B81444 /* PhotoListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListFactory.swift; sourceTree = "<group>"; };
 		E5DF0CC48F9FB1276908DC4F /* Pods-Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.debug.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -504,6 +506,7 @@
 		C683B40E2519679E00B34D8E /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				C684F52B251C12EB004E657E /* Application.swift */,
 				C683B40F2519679E00B34D8E /* AppDelegate.swift */,
 				C683B4182519679F00B34D8E /* Assets.xcassets */,
 				C683B41A2519679F00B34D8E /* LaunchScreen.storyboard */,
@@ -712,7 +715,6 @@
 		C684F4E3251C004A004E657E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				C684F52B251C12EB004E657E /* Application.swift */,
 				C684F54B251C26A4004E657E /* Helpers */,
 				C684F50F251C0863004E657E /* Scenes */,
 				C684F4E5251C004A004E657E /* Info.plist */,
@@ -758,6 +760,7 @@
 				C684F514251C0AFC004E657E /* PhotoListInteractor.swift */,
 				C684F516251C0B0A004E657E /* PhotoListPresenter.swift */,
 				C684F518251C0B14004E657E /* PhotoListModels.swift */,
+				C6AC644D2630636300B81444 /* PhotoListFactory.swift */,
 			);
 			path = PhotoList;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AC6455263066BD00B81444 /* Application.swift in Sources */,
 				C683B4102519679E00B34D8E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1399,11 +1403,11 @@
 			files = (
 				C684F54D251C26DC004E657E /* UIImageLoader.swift in Sources */,
 				C684F54F251D109C004E657E /* DispatchQueue+Dedupe.swift in Sources */,
-				C684F52C251C12EB004E657E /* Application.swift in Sources */,
 				C684F517251C0B0A004E657E /* PhotoListPresenter.swift in Sources */,
 				C684F512251C0AD9004E657E /* PhotoListViewController.swift in Sources */,
 				C684F519251C0B14004E657E /* PhotoListModels.swift in Sources */,
 				C684F515251C0AFC004E657E /* PhotoListInteractor.swift in Sources */,
+				C6AC644E2630636300B81444 /* PhotoListFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
