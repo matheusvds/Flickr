@@ -76,10 +76,6 @@ extension PhotoListViewController: PhotoListViewDelegate {
         navigationItem.searchController = controller
     }
     
-    func cancelLoading(for imageView: UIImageView) {
-        imageLoader.cancel(for: imageView)
-    }
-    
     func set(imageView: UIImageView?, with url: String, at row: Int) {
         if let imageView = imageView {
             imageLoader.load(url, for: imageView, at: row)
@@ -92,10 +88,6 @@ extension PhotoListViewController: PhotoListViewDelegate {
 
     func reachedEndOfPage() {
         fetchNewPhotoPage(with: query)
-    }
-
-    func didSelectRow() {
-        // It will be implemented in case there's time available
     }
 }
 

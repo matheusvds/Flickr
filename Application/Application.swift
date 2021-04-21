@@ -34,7 +34,7 @@ public class Main: Application {
         let presenter = PhotoListPresenter()
         let interactor = PhotoListInteractor(getPhotos: getPhotos)
         let view = PhotoListView()
-        let imageLoder = ImageLoader(getImageData: getImageData)
+        let imageLoder = ImageLoader()
         let viewController = PhotoListViewController(viewLogic: view, interactor: interactor, imageLoader: imageLoder)
         
         view.delegate = viewController

@@ -5,7 +5,6 @@ public protocol PhotoListViewLogic {
     var view: UIView { get }
     func set(viewModel: PhotoListViewModel)
     func clearItems()
-    func getSelectedRow() -> Int?
 }
 
 public typealias PhotoListViewDelegate = PhotoListTableDelegate & ImageLoadingDelegate & SearchDelegate
@@ -17,13 +16,11 @@ public protocol SearchDelegate: class {
 
 public protocol PhotoListTableDelegate: class {
     func reachedEndOfPage()
-    func didSelectRow()
     func isLoading() -> Bool
 }
 
 public protocol ImageLoadingDelegate: class {
     func set(imageView: UIImageView?, with url: String, at row: Int)
-    func cancelLoading(for imageView: UIImageView)
 }
 
 public final class PhotoListView: UIView {
@@ -45,8 +42,8 @@ public final class PhotoListView: UIView {
     
     private lazy var screenLoading: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .medium)
-        view.startAnimating()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.startAnimating()
         return view
     }()
     
@@ -69,6 +66,7 @@ public final class PhotoListView: UIView {
     }()
     
     private var items = [PhotoListItem]()
+    private var searchItems = [PhotoListItem]()
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -87,7 +85,7 @@ public final class PhotoListView: UIView {
     private func startScreenLoading() {
         self.subviews.forEach { $0.removeFromSuperview() }
         addSubview(screenLoading)
-        drawLoading(view: screenLoading)
+        drawLoading(view: screenLoading, at: self)
     }
     
     private func stopLoading() {
@@ -116,10 +114,6 @@ extension PhotoListView: PhotoListViewLogic {
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
     }
     
-    public func getSelectedRow() -> Int? {
-        return collectionView.indexPathsForSelectedItems?.first?.row
-    }
-    
     public var view: UIView {
         return self
     }
@@ -141,10 +135,6 @@ extension PhotoListView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionCell.reuseIdentifier,
                                                       for: indexPath) as! PhotoCollectionCell
-        cell.imageView.tag = indexPath.row
-        cell.cancelLoad = { [weak self] imgView in
-            self?.delegate?.cancelLoading(for: imgView)
-        }
         let item = items[indexPath.row]
         delegate?.set(imageView: cell.imageView, with: item.image, at: indexPath.row)
         
@@ -167,19 +157,15 @@ extension PhotoListView: UICollectionViewDelegate, UICollectionViewDelegateFlowL
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath)
-            if (delegate?.isLoading() ?? false){
+            if let isLoading = delegate?.isLoading(), isLoading {
                 footer.addSubview(screenLoading)
-                drawLoading(view: screenLoading)
+                drawLoading(view: screenLoading, at: footer)
             } else {
                 footer.subviews.forEach { $0.removeFromSuperview() }
             }
             return footer
         }
         return UICollectionReusableView()
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectRow()
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -213,10 +199,10 @@ extension PhotoListView: ViewCode {
         ])
     }
     
-    private func drawLoading(view: UIView) {
+    private func drawLoading(view: UIView, at superview: UIView) {
         NSLayoutConstraint.activate([
-            view.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            view.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
         ])
     }
     
