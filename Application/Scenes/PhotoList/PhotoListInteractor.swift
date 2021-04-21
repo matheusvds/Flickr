@@ -47,6 +47,6 @@ extension PhotoListInteractor: PhotoListBusinessLogic {
         if query.isEmpty { return }
         var currentSuggestions = getSuggestions.getSuggestions()
         currentSuggestions.append(query)
-        setSuggestions.set(suggestions: currentSuggestions)
+        setSuggestions.set(suggestions: currentSuggestions.suffix(5))
     }
 }

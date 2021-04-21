@@ -116,6 +116,7 @@ public final class PhotoListView: UIView {
 
 // MARK: - PhotoListViewLogic
 extension PhotoListView: PhotoListViewLogic {
+    
     public func set(suggestions: [String]) {
         self.suggestions = suggestions.reversed()
         DispatchQueue.main.async { [weak self] in
