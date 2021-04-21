@@ -35,8 +35,8 @@ public final class PhotoListView: UIView {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchBar.autocapitalizationType = .none
         controller.searchResultsUpdater = self
+        controller.delegate = self
         controller.obscuresBackgroundDuringPresentation = false
-        controller.searchBar.placeholder = "we searched for kittens, wanna try?"
         return controller
     }()
     
@@ -57,6 +57,15 @@ public final class PhotoListView: UIView {
         return collection
     }()
     
+    private lazy var suggestionTableView: UITableView = {
+        let tableview = UITableView()
+        tableview.dataSource = self
+        tableview.delegate = self
+        tableview.register(UITableViewCell.self, forCellReuseIdentifier: "suggestionCell")
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
+    }()
+    
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -66,6 +75,7 @@ public final class PhotoListView: UIView {
     }()
     
     private var items = [PhotoListItem]()
+    private var suggestions: [Suggestion] = ["kittens", "garden", "places", "something"]
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -92,6 +102,13 @@ public final class PhotoListView: UIView {
     
     private func setEmptyStateView() {
         collectionView.buildEmptyView()
+    }
+    
+    private func rebuildCollectionView() {
+        searchController.dismiss(animated: true)
+        suggestionTableView.removeFromSuperview()
+        startScreenLoading()
+        setup()
     }
 }
 
@@ -122,11 +139,44 @@ extension PhotoListView: PhotoListViewLogic {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension PhotoListView: UISearchResultsUpdating {
     
     public func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         delegate?.didSearch(with: text)
+    }
+}
+
+// MARK: - UISearchControllerDelegate
+extension PhotoListView: UISearchControllerDelegate {
+    
+    public func presentSearchController(_ searchController: UISearchController) {
+        self.collectionView.removeFromSuperview()
+        self.buildSuggestionsView()
+    }
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+extension PhotoListView: UITableViewDataSource, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let suggestion = suggestions[indexPath.row]
+        rebuildCollectionView()
+        delegate?.didSearch(with: suggestion)
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return suggestions.count
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Recent searches"
+    }
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell", for: indexPath)
+        cell.textLabel?.text = suggestions[indexPath.row]
+        return cell
     }
 }
 
@@ -205,6 +255,18 @@ extension PhotoListView: ViewCode {
         ])
     }
     
+    private func buildSuggestionsView() {
+        addSubview(suggestionTableView)
+        
+        let padding: CGFloat = 10
+        NSLayoutConstraint.activate([
+            suggestionTableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            suggestionTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
+            suggestionTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            suggestionTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding)
+        ])
+    }
+    
     private func drawLoading(view: UIView, at superview: UIView) {
         NSLayoutConstraint.activate([
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
@@ -214,5 +276,6 @@ extension PhotoListView: ViewCode {
     
     func additionalConfiguration() {
         backgroundColor = .systemGray6
+        searchController.searchBar.placeholder = "we searched for kittens, wanna try?"
     }
 }

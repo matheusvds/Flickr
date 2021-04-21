@@ -8,6 +8,8 @@ public protocol PhotoListItem {
     var image: String { get }
 }
 
+typealias Suggestion = String
+
 struct PhotoListVM: PhotoListViewModel {
     let items: [PhotoListItem]?
     
