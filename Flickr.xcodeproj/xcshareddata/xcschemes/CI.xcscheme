@@ -76,6 +76,20 @@
                ReferencedContainer = "container:Flickr.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C683B40B2519679E00B34D8E"
+               BuildableName = "Flickr.app"
+               BlueprintName = "Flickr"
+               ReferencedContainer = "container:Flickr.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
