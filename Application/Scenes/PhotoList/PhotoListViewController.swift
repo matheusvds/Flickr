@@ -86,7 +86,7 @@ extension PhotoListViewController: PhotoListViewDelegate {
     
     func set(imageView: UIImageView?, with url: String, at row: Int) {
         if let imageView = imageView {
-            imageLoader.load(url, for: imageView, at: row)
+            imageLoader.load(url, for: imageView)
         }
     }
 
