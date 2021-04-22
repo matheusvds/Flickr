@@ -8,7 +8,7 @@ target 'Flickr' do
 end
 
 target 'Application' do
-  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImage', '5.11.0'
 
   target 'ApplicationTests' do
     inherit! :none
