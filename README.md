@@ -5,8 +5,9 @@
 An iOS application written in Swift using the Clean Architecture design that consumes the Flickr REST API.
 
 ## Dependencies
-- SnapKit 4.0.1
-- SPM
+- Cocoapods 1.10.1
+- SDWebImage 5.11.0
+- Ruby 2.6.3
 
 ## Project Structure
 
@@ -19,7 +20,33 @@ An iOS application written in Swift using the Clean Architecture design that con
 
 ## Instructions
 
-Make sure you have a Xcode version compatible with Swift 5. Open the *.xcodeproj* file and **wait for SPM to download dependencies**. 
+Make sure you have a Xcode version compatible with Swift 5. Follow the instructions below to install rbenv and make sure your environment is same as the one that built this project. If you think this isn't an issue in your machine, you can skip the steps below by running `pod install` at the project's root directory.
+
+### Install bundler
+
+Run the command below:
+`brew install bundler`
+
+### Install Rbenv
+
+Run the command below:
+`curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash`
+
+### Install project's ruby version
+
+Run the command below:
+`rbenv install`
+
+### Install project's gem dependencies
+
+Run the command below:
+`bundle install`
+
+### Install project's iOS dependencies
+
+Run the command below:
+`bundle exec pod install`
+
 Once that is done, you are free to run the app.
 
 Choose between the following schemes:
