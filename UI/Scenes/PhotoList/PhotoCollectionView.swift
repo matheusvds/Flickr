@@ -43,7 +43,7 @@ class PhotoCollectionView: UICollectionView {
     
     private func addEmptyState() {
         if numberOfItems(inSection: 0) == 0 {
-           let message = "Nothing here"
+           let message = "Nothing here for now"
            let emoticon = ["🙈", "🙉", "🙊"].shuffled()[0]
            emptyView.text = "\(message) \(emoticon)"
            emptyView.isHidden = false
