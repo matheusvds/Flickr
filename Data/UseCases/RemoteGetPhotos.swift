@@ -2,10 +2,10 @@ import Domain
 import Foundation
 
 public final class RemoteGetPhotos: GetPhotos {
-    private let searchPhotos: SearchPhotos
-    private let getSizes: GetSizes
+    private let searchPhotos: RemoteSearchPhotos
+    private let getSizes: RemoteGetSizes
     
-    public init(searchPhotos: SearchPhotos, getSizes: GetSizes) {
+    public init(searchPhotos: RemoteSearchPhotos, getSizes: RemoteGetSizes) {
         self.searchPhotos = searchPhotos
         self.getSizes = getSizes
     }
