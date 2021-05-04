@@ -36,4 +36,14 @@ enum PhotoList {
             let suggestions: [String]
         }
     }
+    
+    enum SetSuggestions {
+        
+        struct Request {
+            let query: String
+        }
+        
+        struct Response {}
+        struct ViewModel {}
+    }
 }

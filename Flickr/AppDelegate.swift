@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let getSizes = RemoteGetSizes(httpClient: client)
         let getPhotos = RemoteGetPhotos(searchPhotos: searchPhotos, getSizes: getSizes)
         let getSuggestion = LocalGetSuggestions(userSettings: userSettings)
-        let setSuggestion = LocalSetSuggestions(userSettings: userSettings)
+        let setSuggestion = LocalSetSuggestions(userSettings: userSettings, getSuggestions: getSuggestion)
         let photoListFactory = PhotoListFactory(getPhotos: getPhotos, getSuggestions: getSuggestion, setSuggestions: setSuggestion)
         let main = Main(photoListScene: photoListFactory)
         return main

@@ -2,5 +2,5 @@ import Foundation
 
 public protocol SetSuggestions {
     
-    func set(suggestions: [String])
+    func set(suggestion: String)
 }

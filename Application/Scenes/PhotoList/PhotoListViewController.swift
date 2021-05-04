@@ -107,6 +107,7 @@ extension PhotoListViewController {
     }
     
     private func fetchPhotos(with query: String) {
+        interactor.setSuggestion(request: PhotoList.SetSuggestions.Request(query: query))
         interactor.fetchPhotos(request: PhotoList.GetPhotos.Request(query: query, page: pagination))
     }
     

@@ -53,5 +53,5 @@ final class GetSuggestionsSpy: GetSuggestions {
 }
 
 final class SetSuggestionsSpy: SetSuggestions {
-    func set(suggestions: [String]) {}
+    func set(suggestion: String) {}
 }

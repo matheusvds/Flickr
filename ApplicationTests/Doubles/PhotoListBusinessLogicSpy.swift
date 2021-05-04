@@ -11,4 +11,5 @@ class PhotoListBusinessLogicSpy: PhotoListBusinessLogic {
     }
     
     func fetchSuggestions(request: PhotoList.GetSuggestions.Request) {}
+    func setSuggestion(request: PhotoList.SetSuggestions.Request) {}
 }
