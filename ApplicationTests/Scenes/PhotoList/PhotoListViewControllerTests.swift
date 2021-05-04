@@ -26,9 +26,15 @@ class PhotoListViewControllerTests: XCTestCase {
     func test_should_fetch_photos_when_view_loads() {
         let (sut, _, businessSpy) = makeSut()
         loadView(sut)
-        sut.viewDidLoad()
         
         XCTAssert(businessSpy.fetchPhotosCalled)
+    }
+    
+    func test_should_set_suggestion_when_fetch_photos_called() {
+        let (sut, _, businessSpy) = makeSut()
+        loadView(sut)
+        
+        XCTAssert(businessSpy.setSuggestionCalled)
     }
     
     func test_display_fetched_photos_ask_view_logic_to_set_viewmodel() {
