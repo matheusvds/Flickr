@@ -24,27 +24,22 @@ Make sure you have a Xcode version compatible with Swift 5. Follow the instructi
 
 ### Install bundler
 
-Run the command below:
 `brew install bundler`
 
 ### Install Rbenv
 
-Run the command below:
 `curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash`
 
 ### Install project's ruby version
 
-Run the command below:
 `rbenv install`
 
 ### Install project's gem dependencies
 
-Run the command below:
 `bundle install`
 
 ### Install project's iOS dependencies
 
-Run the command below:
 `bundle exec pod install`
 
 Once that is done, you are free to run the app.
